@@ -1,0 +1,58 @@
+<!DOCTYPE html>	
+</body>
+</html>
+<html>
+<head>
+<meta http-equiv="pragram" content="no-cache"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>会议室日历订阅</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style type="text/css">
+	body{margin: 0;padding: 0;}
+	iframe{position: relative;}
+	.loading{position:absolute;top:50px;right:0;left:0;text-align:center;}
+	.loading p{opacity:0;-webkit-animation: p-show .3s ease-out forwards;animation: p-show .3s ease-out forwards;}
+	.loading p:nth-child(2){-webkit-animation-delay: 2s;animation-delay: 2s;}
+	.loading p:nth-child(3){-webkit-animation-delay: 3s;animation-delay: 3s;}
+	.showTip{position:absolute;top:0;right:0;width:100%;height:100%;}
+	.mask{background:#000000;opacity:0.8;width:100%;height:100%;height:100vh;overflow: hidden;}
+	@-webkit-keyframes p-show {from { opacity:0; } to { opacity:100; } }
+	@keyframes p-show {from { opacity:0; } to { opacity:100; } }
+</style>
+</head>
+<body >
+<section id="loading" class="loading">
+	<p>拼命的加载ing...</p>
+	<p id="p2"><br />请在弹出框点击【订阅】</p>
+	<p id="p3">会议室将会订阅到【日历】APP中<br />或点击【显示事件】查看！</p>
+</section>
+<iframe id="iframe" src="webcal://p08-calendars.icloud.com/published/2/0FQftqP0e1LUwbYcfv1gJoQ44TvXDToRU2LYPWU3jYxXZdBfGYIl_e9uXqoHRccvHHgMZHgoGm7rxAeu4-LdMOmphJJ1RFl86bfbWqe86oE" frameborder="0"></iframe>
+<div class="showTip" id="showTip" style="display: none;">
+	<div class="mask"><div style="padding:0 0 0 15px"><img src="tips.png" width="100%" /></div></div>
+</div>
+<script>
+	var u = navigator.userAgent, app = navigator.appVersion;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if (isiOS) {
+		//判断客户端微信版本    Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; chromeframe/30.0.1599.101; SLCC2  其中4.0为微信版本号  5.0或以上可以支付
+		var agent = navigator.userAgent.toString();
+		var isWX = agent.indexOf('MicroMessenger/') != -1;
+		var isQQ = agent.indexOf('QQ/') != -1;
+		//其他浏览器
+		if (isWX || isQQ) {
+			document.getElementById("showTip").style.display = 'block';
+		}else{
+			document.getElementById("showTip").style.display = 'none';
+		}
+	}else{
+		document.getElementById("iframe").setAttribute('src', 'http://www.memotoo.com/agendaEmbed.php?uid=b03bbf9a19e7ba051ada9de95cb8d6ab&amp;q=8hLXz7uJistx6BQamH3WppiXMkZtkagNurkw7v7+2FMNCpGpB+2FS9fmrFAX3kgYkNivWJPK4vUscM6sSzueFb9raru+2Ff6wzCA+2FxmTb1Eb1j6G+dj8DbuvSWudRcOSkQk2NiL5D8LF2BwLZIMqKGzEbMKLYgW1G4BuiLbGXpZkSW5PZ88vORfkZ3wABGUH9HtBAglIG4r5nsmiyfxjjyXmU4pw==');
+		document.getElementById("iframe").style.width = '100%';
+		document.getElementById("iframe").style.height = document.documentElement.clientHeight + 'px';
+		if (!agent.indexOf('MQQBrowser/') != -1) document.getElementById("iframe").style.height = '100vh';
+		document.getElementById("p2").style.display = 'none';
+		document.getElementById("p3").style.display = 'none';
+	}
+</script>
+</body>
+</html>

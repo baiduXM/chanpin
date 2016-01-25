@@ -1,0 +1,98 @@
+/**
+ /* 3D翻牌 - 正反互换 */
+.card3d {
+	position: relative;
+	/*width: 120px;
+	height: 120px;*/
+/*	-webkit-perspective: 600;
+	perspective: 600;*/
+	-webkit-perspective-origin: 50% -100%;
+	perspective-origin: 50% -100%;
+}
+.card3d .front,
+.card3d .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: -webkit-transform 3s ease-in-out;
+	-moz-transition: -moz-transform 3s ease-in-out;
+	-ms-transition: -moz-transform 3s ease-in-out;
+	-o-transition: -o-transform 3s ease-in-out;
+	transition: transform 3s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.card3d .front {
+	z-index: 10;
+	-webkit-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-moz-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-ms-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-o-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	display:block\9;
+}
+.cur .card3d .front,
+.card3d.flipped .front {
+	z-index: 8;
+	-webkit-transform: perspective(600px) rotate3d(0, 1, 0, -179deg);
+	-moz-transform: perspective(600px) rotate3d(0, 1, 0, -179deg);
+	-ms-transform: perspective(600px) rotate3d(0, 1, 0, -179deg);
+	-o-transform: perspective(600px) rotate3d(0, 1, 0, -179deg);
+	transform: perspective(600px) rotate3d(0, 1, 0, -179deg);
+	display:none\9;
+}
+.card3d .back {
+	z-index: 8;
+	-webkit-transform: perspective(600px) rotate3d(0, 1, 0, 179deg);
+	-moz-transform: perspective(600px) rotate3d(0, 1, 0, 179deg);
+	-ms-transform: perspective(600px) rotate3d(0, 1, 0, 179deg);
+	-o-transform: perspective(600px) rotate3d(0, 1, 0, 179deg);
+	transform: perspective(600px) rotate3d(0, 1, 0, 179deg);
+	display:none\9;
+}
+.cur .card3d .back,
+.card3d.flipped .back {
+	z-index: 10;
+	-webkit-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-moz-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-ms-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	-o-transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	transform: perspective(600px) rotate3d(0, 1, 0, 0deg);
+	display:block\9;
+}
+.card3d.card3d-down {
+-webkit-perspective-origin: -100% 50%;
+perspective-origin: -100% 50%;
+}
+.card3d.card3d-down .front {
+	z-index: 10;
+	-webkit-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-moz-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-ms-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-o-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+}
+.card3d.card3d-down.flipped .front {
+	z-index: 8;
+	-webkit-transform: perspective(600px) rotate3d(1, 0, 0, -179deg);
+	-moz-transform: perspective(600px) rotate3d(1, 0, 0, -179deg);
+	-ms-transform: perspective(600px) rotate3d(1, 0, 0, -179deg);
+	-o-transform: perspective(600px) rotate3d(1, 0, 0, -179deg);
+	transform: perspective(600px) rotate3d(1, 0, 0, -179deg);
+}
+.card3d.card3d-down .back {
+	z-index: 8;
+	-webkit-transform: perspective(600px) rotate3d(1, 0, 0, 179deg);
+	-moz-transform: perspective(600px) rotate3d(1, 0, 0, 179deg);
+	-ms-transform: perspective(600px) rotate3d(1, 0, 0, 179deg);
+	-o-transform: perspective(600px) rotate3d(1, 0, 0, 179deg);
+	transform: perspective(600px) rotate3d(1, 0, 0, 179deg);
+}
+.card3d.card3d-down.flipped .back {
+	z-index: 10;
+	-webkit-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-moz-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-ms-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	-o-transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+	transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
+}

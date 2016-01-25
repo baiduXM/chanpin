@@ -1,0 +1,236 @@
+quickbarCallback({
+	"config": {
+		"enable": true,
+		"type": "m1",
+		"style": {
+			"barColor" : "#AAA",
+			"navtopColor" :  "",
+			"textColor" : "#FFF",
+			"iconColor" : ""
+		}
+	},
+	"quickbar": [
+		{
+			"name": "电话", 
+			"icon": "&#xe602;",
+			"image": "icon/2.png", 
+			"data": "0592-2323232", 
+			"link": "tel://0592-2323232", 
+			"type": "tel", 
+			"enable": 1
+		},
+		{
+			"name": "短信", 
+			"icon": "&#xe604;",
+			"image": "icon/3.png", 
+			"data": "13489990000", 
+			"link": "sms://13489990000", 
+			"type": "sms", 
+			"enable": 1
+		},
+		{
+			"name": "咨询", 
+			"icon": "&#xe606;",
+			"image": "icon/5.png", 
+			"data": "小E:156568451@QQ|客服-XX:10000@QQ", 
+			"link": "http://wpd.b.qq.com/cgi/get_m_sign.php?uin=156568451", 
+			"type": "im", 
+			"enable": 1
+		},
+		{
+			"name": "地图", 
+			"icon": "&#xe605;",
+			"image": "icon/4.png", 
+			"data": "厦门市思明区观日路30号", 
+			"link": "http://api.map.baidu.com/geocoder?address=厦门市思明区观日路30号&output=html", 
+			"type": "link", 
+			"enable": 1
+		},
+		{
+			"name": "分享", 
+			"icon": "&#xe600;",
+			"image": "icon/8.png", 
+			"data": "qzone,tqq,tsina,ibaidu", 
+			"link": "javascript:void(0);", 
+			"type": "share", 
+			"enable": 1
+		},
+		{
+			"name": "关注微信", 
+			"icon": "&#xe61b;",
+			"image": "icon/5.png", 
+			"data": "http://s.jiathis.com/qrcode.php?url=http://weixin.qq.com/r/Pt5PV97EWYMmrZo094ss", 
+			"link": "javascript:void(0);", 
+			"type": "follow", 
+			"enable": 1
+		},
+		{
+			"name": "关注微博", 
+			"icon": "&#xe653;",
+			"image": "icon/5.png", 
+			"data": "http://s.jiathis.com/qrcode.php?url=http://weibo.cn/qr/userinfo?uid=1242837564", 
+			"link": "javascript:void(0);", 
+			"type": "follow", 
+			"enable": 0
+		},
+		{
+			"name": "搜索", 
+			"icon": "&#xe636;",
+			"image": "icon/8.png", 
+			"data": "search.php?s=", 
+			"link": "javascript:void(0);", 
+			"type": "search", 
+			"enable": 1
+		}
+	], 
+	"catlist":[
+		{
+			"id": 0, 
+			"name": "首页", 
+			"url": "index.html",
+			"childmenu": null
+		},
+		{
+			"id": 1, 
+			"name": "新闻列表", 
+			"url": "list-text.html?id=1",
+			"childmenu": null
+		},
+		{
+			"id": 3, 
+			"name": "产品列表", 
+			"url": "list-imagetext.html?id=3",
+			"childmenu": [
+				{
+					"id": 11, 
+					"name": "二级分类", 
+					"url": "list-imagetext.html",  
+					"childmenu": [
+						{
+							"id": 21, 
+							"name": "三级分类", 
+							"url": "list-imagetext.html",  
+							"childmenu": [
+								{
+									"id": 31, 
+									"name": "四级分类", 
+									"url": "list-imagetext.html",  
+									"childmenu": null
+								}
+							]
+						},
+						{
+							"id": 22, 
+							"name": "三级分类", 
+							"url": "list-imagetext.html",  
+							"childmenu": null
+						}
+					]
+				},
+				{
+					"id": 12, 
+					"name": "二级分类", 
+					"url": "list-imagetext.html",  
+					"childmenu": null
+				}
+			]
+		},
+		{
+			"id": 4, 
+			"name": "最新产品", 
+			"url": "list-image.html?id=4",  
+			"childmenu": null
+		},
+		{
+			"id": 7, 
+			"name": "关于我们", 
+			"url": "list-page.html?id=7",  
+			"childmenu": null
+		},
+		{
+			"id": 8, 
+			"name": "联系我们", 
+			"url": "list-page.html?id=8",  
+			"childmenu": null
+		},
+		{
+			"id": 10, 
+			"name": "留言板", 
+			"url": "list-page.html?id=10",  
+			"childmenu": null
+		},
+		{
+			"id": 2, 
+			"name": "企业动态", 
+			"url": "list-text.html?id=2",  
+			"childmenu": [
+				{
+					"id": 13, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 14, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 15, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				},
+				{
+					"id": 16, 
+					"name": "二级分类", 
+					"url": "list-text.html",  
+					"childmenu": null
+				}
+			]
+		}
+	]
+})
