@@ -69,11 +69,13 @@ function jqueryfunc(){
 				+'.quickbar-sharebox .thumbs-cotnainer .share-icon .title {color: #AAA;}'
 				+'.quickbar-sharebox .share-cance{ height:35px; line-height:35px; overflow:hidden; background:rgba(0,0,0,0.05); text-align:center; margin-top:10px;}'
 				+'.quickbar-sharebox .share-con{ width:100%; height:85px; overflow:hidden;}'
-				+'.quickbar-opacity2{ width:100%; height:100%; position:fixed; top:0px; left:0px; background:rgba(0,0,0,0.2); z-index:2222; display:none;}</style>';
+				+'.quickbar-opacity2{ width:100%; height:100%; position:fixed; top:0px; left:0px; background:rgba(0,0,0,0.2); z-index:2222; display:none;}'
+				+'.quickbar_search{position:fixed;bottom:58px;margin:auto;right:0;height:35px;padding:3px 0;background:rgba(0,0,0,0.7);z-index:9999;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;overflow:hidden;width:0;opacity:0}.quickbar_search.show{width:100%;opacity:1}.quickbar_search .s_ipt_w,.quickbar_search .s_btn_wr{position:absolute;top:0;bottom:0;height:30px;margin:auto 0}.quickbar_search .s_ipt,.quickbar_search .s_btn{font-family:"Microsoft Yahei";font-size:14px;border-radius:5px;height:30px;line-height:30px;overflow:hidden;color:#999;background:#000;width:100%;border:0}.quickbar_search .s_ipt_w{left:0;right:58px}.quickbar_search .s_ipt{text-indent:7px}.quickbar_search .s_btn_wr{width:48px;right:5px}.quickbar_search .s_btn{cursor:pointer}}</style>';
 			$('head').append(share_style);
 			// 底部导航 
 			var li_btn = '';
 			var li_nav = '';
+			var search_form = '';
 			// 获取底部导航图标数据
 			$.each(dataQuickbar.quickbar, function(k,v) {
 				if (typeof v.enable !== 'undefined' && !v.enable) return true;
@@ -81,6 +83,7 @@ function jqueryfunc(){
 					var idAttr = 'id="share_btn"';
 				}else if(v.type == 'search'){
 					var idAttr = 'id="search_btn"';
+					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="请输入编号"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="搜索">' + '</span></form></div>';
 				}else{
 					var idAttr = '';
 				}
@@ -132,6 +135,7 @@ function jqueryfunc(){
 					'+li_btn+'\n\
 					</ul>\n\
 				</div>\n\
+				'+search_form+'\n\
 			').wrapInner('<div class="body public-bg2">\n\
 				<div id="quickbar-navs" class="page-prev public-bg1" style="background:'+configQuickbar.style.barColor+'">\n\
 					<h1 class="quickbar-navs-top public-color1" style="'+(configQuickbar.style.navtopColor ? 'background:'+configQuickbar.style.navtopColor : '')+'"><span class="quickbar-navs-close" style="background:'+(configQuickbar.style.iconColor!=configQuickbar.style.textColor ? configQuickbar.style.iconColor : configQuickbar.style.navtopColor)+'">×</span>快速导航</h1>\n\
@@ -179,6 +183,9 @@ function jqueryfunc(){
 				$(".quickbar-opacity2").hide()
 				$(".quickbar-sharebox").removeClass("show_share")
 				pageSlideOver();
+				if ($('.quickbar_search').hasClass('show')) {
+					$('.quickbar_search').removeClass('show');
+				}
 			});
 			function pageSlideOver(){
 				$('.page-out').on('transitionend', function(){
@@ -238,6 +245,14 @@ function jqueryfunc(){
 					share.pengyou()
 				})
 			});
+
+			//搜索按钮事件
+			$('#search_btn').click(function(event) {
+				$('.quickbar_search').addClass('show');
+				$(".quickbar-opacity2").show()
+			});
+
+
 			// 覆盖初始化事件
 			window.Quickbar_backtoTop = function() {
 				$("#quickbar-wrap-body").animate({scrollTop :0}, 800);
