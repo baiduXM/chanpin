@@ -124,7 +124,6 @@ function jqueryfunc() {
                         var li_phone = "";
                         $.each(li_phonedata, function(index, el) {
                             var v_data = el.split(':');
-                            console.log(v_data[1]);
                             li_phone += '<li>'+'<span class="lable">'+v_data[0]+'</span>:<span class="num">'+v_data[1]+'</span>'+'</li>';
                         });
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><ul>' + li_phone + '</ul></div>';
