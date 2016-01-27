@@ -14,7 +14,7 @@ quickbarCallback({
 			"name": "电话", 
 			"icon": "&#xe602;",
 			"image": "icon/2.png", 
-			"data": "0592-2323232", 
+			"data": "热线电话:0592-2323232|售后电话：13088888888", 
 			"link": "tel://0592-2323232", 
 			"type": "tel", 
 			"enable": 1

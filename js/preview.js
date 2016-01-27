@@ -1905,7 +1905,6 @@ jSmart.prototype.registerPlugin(
 		params['style'] == "1" ? delete _bd_share_config.slide : params['style'] == "2" ? delete _bd_share_config.share : null;
 		params['image'] ? null : delete _bd_share_config.image;
 		with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-				
 		return s;
 	}
 );
