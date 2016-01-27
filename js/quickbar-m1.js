@@ -72,7 +72,7 @@ function jqueryfunc(){
 				+'.quickbar-opacity2{ width:100%; height:100%; position:fixed; top:0px; left:0px; background:rgba(0,0,0,0.2); z-index:2222; display:none;}'
 				+'.quickbar_search{position:fixed;bottom:58px;margin:auto;right:0;height:35px;padding:3px 0;z-index:9999;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;overflow:hidden;width:0;opacity:0}.quickbar_search:before{position:absolute;top:0;left:0;right:0;bottom:0;content:"";background:'
 				+(configQuickbar.style.navtopColor?configQuickbar.style.navtopColor:configQuickbar.style.barColor)
-				+';opacity:.7}.quickbar_search.show{width:100%;opacity:1}.quickbar_search .s_ipt_w,.quickbar_search .s_btn_wr{position:absolute;top:0;bottom:0;height:30px;margin:auto 0}.quickbar_search .s_ipt,.quickbar_search .s_btn{font-family:"Microsoft Yahei";font-size:14px;border-radius:5px;height:30px;line-height:30px;overflow:hidden;color:'
+				+';opacity:.7}.quickbar_search.search_show{width:100%;opacity:1}.quickbar_search .s_ipt_w,.quickbar_search .s_btn_wr{position:absolute;top:0;bottom:0;height:30px;margin:auto 0}.quickbar_search .s_ipt,.quickbar_search .s_btn{font-family:"Microsoft Yahei";font-size:14px;border-radius:5px;height:30px;line-height:30px;overflow:hidden;color:'
 				+configQuickbar.style.textColor+';background:'+(configQuickbar.style.navtopColor?configQuickbar.style.navtopColor:configQuickbar.style.barColor)
 				+';width:100%;border:0}.quickbar_search .s_ipt_w{left:0;right:58px}.quickbar_search .s_ipt{text-indent:7px}.quickbar_search .s_btn_wr{width:48px;right:5px}.quickbar_search .s_btn{cursor:pointer}</style>';
 			$('head').append(share_style);
@@ -187,8 +187,8 @@ function jqueryfunc(){
 				$(".quickbar-opacity2").hide()
 				$(".quickbar-sharebox").removeClass("show_share")
 				pageSlideOver();
-				if ($('.quickbar_search').hasClass('show')) {
-					$('.quickbar_search').removeClass('show');
+				if ($('.quickbar_search').hasClass('search_show')) {
+					$('.quickbar_search').removeClass('search_show');
 				}
 			});
 			function pageSlideOver(){
@@ -252,7 +252,7 @@ function jqueryfunc(){
 
 			//搜索按钮事件
 			$('#search_btn').click(function(event) {
-				$('.quickbar_search').addClass('show');
+				$('.quickbar_search').addClass('search_show');
 				$(".quickbar-opacity2").show()
 			});
 
