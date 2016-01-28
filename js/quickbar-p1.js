@@ -27,7 +27,7 @@ function jqueryfunc() {
             var quickbar_box = '';
             var quickbar_hoverbox = '';
             var shareable = 0; //分享按钮的个数
-            var quickbar_hoverbox_width = 0;
+            var share_hoverbox_width = 0;
             //遍历侧边导航数据
             $.each(dataQuickbar.quickbar, function(k, v) {
                 li_class = '',
@@ -102,7 +102,7 @@ function jqueryfunc() {
                                     break;
                             }
                         });
-                        quickbar_hoverbox_width = shareable * 44;
+                        share_hoverbox_width = shareable * 44;
                         // 添加微信按钮
                         li_class = "quickbar_share";
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><div class="bdsharebuttonbox" data-tag="share_2">' + bdsharebtns + '</div></div>';
@@ -193,7 +193,7 @@ function jqueryfunc() {
 
             //分享按钮的hover事件，计算长度
             $('.quickbar_nav ul li.quickbar_share').hover(function() {
-                $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', quickbar_hoverbox_width + 'px');
+                $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', share_hoverbox_width + 'px');
             }, function() {
                 $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', 0);
             });

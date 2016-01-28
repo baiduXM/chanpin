@@ -74,12 +74,14 @@ function jqueryfunc(){
 				+(dataQuickbar.config.style.secondColor?dataQuickbar.config.style.secondColor:dataQuickbar.config.style.mainColor)
 				+';opacity:.7}.quickbar_search.search_show{width:100%;opacity:1}.quickbar_search .s_ipt_w,.quickbar_search .s_btn_wr{position:absolute;top:0;bottom:0;height:30px;margin:auto 0}.quickbar_search .s_ipt,.quickbar_search .s_btn{font-family:"Microsoft Yahei";font-size:14px;border-radius:5px;height:30px;line-height:30px;overflow:hidden;color:'
 				+dataQuickbar.config.style.textColor+';background:'+(dataQuickbar.config.style.secondColor?dataQuickbar.config.style.secondColor:dataQuickbar.config.style.mainColor)
-				+';width:100%;border:0}.quickbar_search .s_ipt_w{left:0;right:58px}.quickbar_search .s_ipt{text-indent:7px}.quickbar_search .s_btn_wr{width:48px;right:5px}.quickbar_search .s_btn{cursor:pointer}</style>';
+				+';width:100%;border:0}.quickbar_search .s_ipt_w{left:0;right:58px}.quickbar_search .s_ipt{text-indent:7px}.quickbar_search .s_btn_wr{width:48px;right:5px}.quickbar_search .s_btn{cursor:pointer}'
+				+'.follow_img{display: none;position:fixed;z-index:9999;text-align:center;top: 50%;left: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}.follow_img img{position:relative;padding-bottom:64px;}</style>';
 			$('head').append(share_style);
 			// 底部导航 
 			var li_btn = '';
 			var li_nav = '';
 			var search_form = '';
+			var follow_img = '';
 			// 获取底部导航图标数据
 			$.each(dataQuickbar.quickbar, function(k,v) {
 				if (typeof v.enable !== 'undefined' && !v.enable) return true;
@@ -88,6 +90,9 @@ function jqueryfunc(){
 				}else if(v.type == 'search'){
 					var idAttr = 'id="search_btn"';
 					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="请输入编号"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="搜索">' + '</span></form></div>';
+				}else if (v.type == 'follow') {
+					var idAttr = 'id="follow_btn"';
+					follow_img = '<div class="follow_img"><img src="' + v.data + '" alt=""/></div>';
 				}else{
 					var idAttr = '';
 				}
@@ -145,7 +150,7 @@ function jqueryfunc(){
 					'+li_btn+'\n\
 					</ul>\n\
 				</div>\n\
-				'+search_form+'\n\
+				'+search_form+follow_img+'\n\
 			').wrapInner('<div class="body public-bg2">\n\
 				<div id="quickbar-navs" class="page-prev public-bg1" style="background:'+dataQuickbar.config.style.mainColor+'">\n\
 					<h1 class="quickbar-navs-top public-color1" style="'+(dataQuickbar.config.style.secondColor ? 'background:'+dataQuickbar.config.style.secondColor : '')+'"><span class="quickbar-navs-close" style="background:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">×</span>快速导航</h1>\n\
@@ -196,6 +201,7 @@ function jqueryfunc(){
 				if ($('.quickbar_search').hasClass('search_show')) {
 					$('.quickbar_search').removeClass('search_show');
 				}
+				$('.follow_img').css('display', 'none');
 			});
 			function pageSlideOver(){
 				$('.page-out').on('transitionend', function(){
@@ -262,6 +268,11 @@ function jqueryfunc(){
 				$(".quickbar-opacity2").show()
 			});
 
+			// 微信关注按钮事件
+			$('#follow_btn').click(function(event) {
+				$('.follow_img').css('display', 'block');
+				$(".quickbar-opacity2").show()
+			});
 
 			// 覆盖初始化事件
 			window.Quickbar_backtoTop = function() {
