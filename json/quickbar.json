@@ -7,6 +7,9 @@ quickbarCallback({
 			"navtopColor" :  "",
 			"textColor" : "#FFF",
 			"iconColor" : ""
+		},
+		"module": {
+			"tel" : "400-800-8888"
 		}
 	},
 	"quickbar": [

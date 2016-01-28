@@ -2217,8 +2217,8 @@ onReady(function() {
 			window.previewJSQuickbar = {
 				enable: true,
 				style: {
-					barColor : tmpStyleConfigQuickbar[0],
-					navtopColor   : tmpStyleConfigQuickbar[1],
+					mainColor : tmpStyleConfigQuickbar[0],
+					secondColor   : tmpStyleConfigQuickbar[1],
 					textColor   : tmpStyleConfigQuickbar[2],
 					iconColor   : tmpStyleConfigQuickbar[3]
 				}

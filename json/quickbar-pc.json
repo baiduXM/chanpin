@@ -7,6 +7,9 @@ quickbarCallback({
 			"navtopColor" :  "",
 			"textColor" : "#FFF",
 			"iconColor" : ""
+		},
+		"module": {
+			"totop" : 1
 		}
 	},
 	"quickbar": [

@@ -1,10 +1,10 @@
 // jquery文件是否存在
 if (typeof jQuery == 'undefined') { 
-	var map_js = document.createElement("script");
-	map_js.setAttribute("type", "text/javascript");
-	map_js.setAttribute("src", "http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js");
-	map_js.onload = map_js.onreadystatechange = jqueryfunc;
-	var headobj = document.getElementsByTagName("head")[0];headobj.appendChild(map_js);
+	var jsjQuery = document.createElement("script");
+	jsjQuery.setAttribute("type", "text/javascript");
+	jsjQuery.setAttribute("src", "http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js");
+	jsjQuery.onload = jsjQuery.onreadystatechange = jqueryfunc;
+	var headobj = document.getElementsByTagName("head")[0];headobj.appendChild(jsjQuery);
 }else{
 	jqueryfunc();
 }
