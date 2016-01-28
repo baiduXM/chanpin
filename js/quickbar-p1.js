@@ -128,7 +128,7 @@ function jqueryfunc() {
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><ul>' + li_phone + '</ul></div>';
                     } else if (v.type == 'follow') { //微信
                         li_class = "quickbar_weixin";
-                        quickbar_hoverbox = '<div class="quickbar_hoverbox"><img src="' + v.image + '" alt=""/></div>';
+                        quickbar_hoverbox = '<div class="quickbar_hoverbox"><img src="' + v.data + '" alt=""/></div>';
                     }
                     quickbar_box = '<div class="quickbar_box">' + '<span class="icon">' + (v.icon == null ? '<img src="' + v.image + '"/>' : '<i class="icon iconfont">' + v.icon + '</i>') + '</span></div>';
                     li_btn = '<li class="' + li_class + '"><a href="' + v.link + '">' + quickbar_box + '</a>' + quickbar_hoverbox + '</li>';
