@@ -49,7 +49,7 @@ document.getElementById("quickbar-share") !== null ? document.getElementById("qu
 			window.CustomerTYPE = param.match(/(\d*)(.*)/)[2];
 		}
 	}
-	configQuickbar.dataurl = configQuickbar.dataurl.replace('quickbar.json.','quickbar-pc.json');
+	configQuickbar.dataurl = configQuickbar.dataurl.replace('quickbar.json','quickbar-pc.json');
 	configQuickbar.viewcounturl = configQuickbar.viewcounturl.replace('/pc.','/' + CustomerTYPE + '.');
 })();
 // 加载数据
