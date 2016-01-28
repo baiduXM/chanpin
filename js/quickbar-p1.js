@@ -124,11 +124,12 @@ function jqueryfunc() {
                         
                         var li_phone = "";
                         $.each(li_phonedata, function(index, el) {
-                            var v_data = el;
                             if(el.indexOf(':')>=0){
-                                v_data = el.split(':');
+                                var v_data = el.split(':');
+                                li_phone += '<li>'+'<span class="lable">'+v_data[0]+'</span>:<span class="num">'+v_data[1]+'</span>'+'</li>';
+                            }else{
+                                li_phone += '<li>'+'<span class="num">'+el+'</span>'+'</li>';
                             }
-                            li_phone += '<li>'+'<span class="lable">'+v_data[0]+'</span>:<span class="num">'+v_data[1]+'</span>'+'</li>';
                         });
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><ul>' + li_phone + '</ul></div>';
                     } else if (v.type == 'follow') { //微信
@@ -149,9 +150,26 @@ function jqueryfunc() {
                 $('body').find('script').remove()
             }
 
+            var $quickbar_nav = $('<div class="quickbar_nav"><ul>' + li_btns + '</ul></div>');       
+            
+            //分享按钮的hover事件，计算长度
+            $quickbar_nav.find('ul li.quickbar_share').hover(function() {
+                $(this).find('.quickbar_hoverbox').css('width', quickbar_hoverbox_width + 'px');
+            }, function() {
+                $(this).find('.quickbar_hoverbox').css('width', 0);
+            });
+
+            // 添加返回顶部事件
+            $quickbar_nav.on('click', '#quickbar_top', function(event) {
+                var speed = 300; //滑动的速度
+                $('html,body').animate({
+                    scrollTop: 0
+                }, speed);
+                return false;
+            });
             //将数据插入页面
-            var quickbar_nav = '<div class="quickbar_nav"><ul>' + li_btns + '</ul></div>' ;       
-            $('body').prepend(quickbar_nav);
+            $('body').prepend($quickbar_nav);
+            
             //隐藏和显示返回顶部按钮
             $(window).scroll(function() {
                 if ($(document).scrollTop() <= 300) {
@@ -185,26 +203,6 @@ function jqueryfunc() {
 
                 }
 
-            }
-
-
-
-            //分享按钮的hover事件，计算长度
-            $('.quickbar_nav ul li.quickbar_share').hover(function() {
-                $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', quickbar_hoverbox_width + 'px');
-            }, function() {
-                $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', 0);
-            });
-
-            // 添加返回顶部事件
-            if ($("#quickbar_top")) {
-                $("#quickbar_top").on('click', function(event) {
-                    var speed = 300; //滑动的速度
-                    $('html,body').animate({
-                        scrollTop: 0
-                    }, speed);
-                    return false;
-                });
             }
         });
     })(jQuery);
