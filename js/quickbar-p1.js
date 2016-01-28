@@ -135,9 +135,18 @@ function jqueryfunc() {
                 }
                 li_btns += li_btn;
             });
-            //添加返回顶部导航
-            li_btn = '<li class="quickbar_top" id="quickbar_top"><div class="quickbar_box">' + '<span class="icon"><i class="icon iconfont">&#xe617;</i></span>' + '</div></li>';
-            li_btns += li_btn;
+            // 模块开启
+            if (dataQuickbar.config.module) {
+                if (typeof dataQuickbar.config.module === 'string') {
+                    li_btns += $(dataQuickbar.config.module)[0].outerHTML;
+                }else if (typeof dataQuickbar.config.module === 'object') {
+                    if (dataQuickbar.config.module.totop) {
+                        //添加返回顶部导航
+                        li_btn = '<li class="quickbar_top" id="quickbar_top"><div class="quickbar_box">' + '<span class="icon"><i class="icon iconfont">&#xe617;</i></span>' + '</div></li>';
+                        li_btns += li_btn;
+                    }
+                }
+            }
 
             // 低版本jQuery的wrap方法会重复执行body根节点下的script标签
             if (parseFloat($().jquery) < 1.9) {
