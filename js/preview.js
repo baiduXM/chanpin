@@ -2237,6 +2237,9 @@ onReady(function() {
 							case 'tel':
 								previewJSQuickbar.module.tel = PREVIEW_CONFIG.contact.telephone;
 								break;
+							case 'totop':
+								previewJSQuickbar.module.totop = 1;
+								break;
 						}
 					};
 				}
