@@ -111,8 +111,7 @@ function jqueryfunc() {
                     } else if (v.type == 'link') { //一般为地图
                         li_class = "quickbar_map";
                     } else if (v.type == 'sms') { //短信
-                        li_class = "quickbar_sms";
-                        // quickbar_hoverbox = '<div class="quickbar_hoverbox">'+v.data+'</div>';
+                        return true;﻿//pc不支持短信
                     } else if (v.type == 'tel') { // 电话
                         li_class = "quickbar_phone";
                         var li_phonedata = '';
