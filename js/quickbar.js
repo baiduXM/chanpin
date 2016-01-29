@@ -48,8 +48,11 @@ document.getElementById("quickbar-share") !== null ? document.getElementById("qu
 			window.CustomerID = param.match(/(\d*)(.*)/)[1];
 			window.CustomerTYPE = param.match(/(\d*)(.*)/)[2];
 		}
+	}else{
+		if (CustomerTYPE == 'pc') {
+			configQuickbar.dataurl = configQuickbar.dataurl.replace('quickbar.json','quickbar-pc.json');
+		}
 	}
-	configQuickbar.dataurl = configQuickbar.dataurl.replace('quickbar.json','quickbar-pc.json');
 	configQuickbar.viewcounturl = configQuickbar.viewcounturl.replace('/pc.','/' + CustomerTYPE + '.');
 })();
 // 加载数据
