@@ -89,14 +89,14 @@ function jqueryfunc(){
 					var idAttr = 'id="share_btn"';
 				}else if(v.type == 'search'){
 					var idAttr = 'id="search_btn"';
-					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="请输入编号"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="搜索">' + '</span></form></div>';
+					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="请输入搜索关键字"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="搜索">' + '</span></form></div>';
 				}else if (v.type == 'follow') {
 					var idAttr = 'id="follow_btn"';
 					follow_img = '<div class="follow_img"><img src="' + v.data + '" alt=""/></div>';
 				}else{
 					var idAttr = '';
 				}
-				li_btn += '<li><a href="'+v.link+'" '+idAttr+'><p class="fix_icon">'+(v.icon == null ? '<img src="'+v.image+'" width="33" width="33">' : '<i class="iconfont">'+v.icon+'</i>' )+'</p><p class="title">'+v.name+'</p></a></li>';
+				li_btn += '<li><a href="'+(typeof v.link !== 'undefined' ? v.link : 'javascript:void(0)')+'" '+idAttr+'><p class="fix_icon">'+(v.icon == null ? '<img src="'+v.image+'" width="33" width="33">' : '<i class="iconfont">'+v.icon+'</i>' )+'</p><p class="title">'+v.name+'</p></a></li>';
 			});
 			// 获取侧边导航数据
 			$.each(dataQuickbar.catlist, function(k,v) {
