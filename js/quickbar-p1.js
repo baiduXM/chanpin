@@ -57,10 +57,10 @@ function jqueryfunc() {
                             // 获取咨询的用户名和链接
                             var value = im_v_arr[0].split(':');
                             // 如果是qq咨询
-                            if (im_type === "QQ" | im_type === "qq") {
-                                im_li += '<li><a href="http://wpa.qq.com/msgrd?v=3&uin=' + value[1] + '&site=qq&amp;menu=yes"><i class="icon iconfont">&#xe64c;</i><span>' + value[0] + '</span></a></li>';
+                            if (im_type === "QQ" || im_type === "qq") {
+                                im_li += '<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=' + value[1] + '&site=qq&amp;menu=yes"><i class="icon iconfont">&#xe64c;</i><span>' + value[0] + '</span></a></li>';
                             } else {
-                                im_li += '<li><a href="' + value[1] + '"><i class="icon iconfont">&#xe64c;</i><span>' + value[0] + '</span></a></li>';
+                                im_li += '<li><a target="_blank" href="' + value[1] + '"><i class="icon iconfont">&#xe64c;</i><span>' + value[0] + '</span></a></li>';
                             }
                         });
                     }
@@ -70,6 +70,7 @@ function jqueryfunc() {
                     quickbar_box = '<div class="quickbar_box">' + '<span class="icon">' + (v.icon == null ? '<img src="' + v.image + '"/>' : '<i class="icon iconfont">' + v.icon + '</i>') + '</span></div>';
                     li_btn = '<li class="' + li_class + '">' + quickbar_box + quickbar_hoverbox + '</li>';
                 } else {
+                    var li_target = '';
                     if (v.type == 'share') { //分享
                         var data_arr = '';
                         if (v.data && (typeof v.data === 'string')) {
@@ -110,8 +111,9 @@ function jqueryfunc() {
 
                     } else if (v.type == 'map') { //地图
                         li_class = "quickbar_map";
+                        li_target = 'target="_blank"';
                     } else if (v.type == 'link') { //外链
-                        //
+                        li_target = 'target="_blank"';
                     } else if (v.type == 'sms') { //短信
                         return true;﻿
                         // li_class = "quickbar_sms";
@@ -138,7 +140,7 @@ function jqueryfunc() {
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><img src="' + v.data + '" alt=""/></div>';
                     }
                     quickbar_box = '<div class="quickbar_box">' + '<span class="icon">' + (v.icon == null ? '<img src="' + v.image + '"/>' : '<i class="icon iconfont">' + v.icon + '</i>') + '</span></div>';
-                    li_btn = '<li class="' + li_class + '"><a href="' + v.link + '">' + quickbar_box + '</a>' + quickbar_hoverbox + '</li>';
+                    li_btn = '<li class="' + li_class + '"><a ' + li_target + ' href="' + v.link + '">' + quickbar_box + '</a>' + quickbar_hoverbox + '</li>';
                 }
                 li_btns += li_btn;
             });
