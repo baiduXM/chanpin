@@ -46,7 +46,7 @@ quickbarCallback({
 			"image": "icon/4.png", 
 			"data": "厦门市思明区观日路30号|118.189598,24.491176", 
 			"link": "http://api.map.baidu.com/marker?location=24.491176,118.189598&title=目标位置&content=厦门市思明区观日路30号&output=html", 
-			"type": "link", 
+			"type": "map", 
 			"enable": 1
 		},
 		{

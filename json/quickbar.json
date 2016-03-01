@@ -46,7 +46,7 @@ quickbarCallback({
 			"image": "icon/4.png", 
 			"data": "厦门市思明区观日路30号", 
 			"link": "http://api.map.baidu.com/geocoder?address=厦门市思明区观日路30号&output=html", 
-			"type": "link", 
+			"type": "map", 
 			"enable": 1
 		},
 		{

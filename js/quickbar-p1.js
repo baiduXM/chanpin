@@ -108,8 +108,10 @@ function jqueryfunc() {
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><div class="bdsharebuttonbox" data-tag="share_2">' + bdsharebtns + '</div></div>';
 
 
-                    } else if (v.type == 'link') { //一般为地图
+                    } else if (v.type == 'map') { //地图
                         li_class = "quickbar_map";
+                    } else if (v.type == 'link') { //外链
+                        //
                     } else if (v.type == 'sms') { //短信
                         return true;﻿
                         // li_class = "quickbar_sms";
