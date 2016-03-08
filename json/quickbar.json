@@ -59,6 +59,15 @@ quickbarCallback({
 			"enable": 1
 		},
 		{
+			"name": "外链", 
+			"icon": "&#xe612;",
+			"image": "icon/8.png", 
+			"data": "http://www.gbpen.com|http://www.12t.cn", 
+			"link": "javascript:void(0);", 
+			"type": "link", 
+			"enable": 1
+		},
+		{
 			"name": "关注微信", 
 			"icon": "&#xe61b;",
 			"image": "icon/5.png", 
