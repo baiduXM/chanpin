@@ -62,7 +62,7 @@ quickbarCallback({
 			"name": "外链", 
 			"icon": "&#xe612;",
 			"image": "icon/8.png", 
-			"data": "http://www.gbpen.com|http://www.12t.cn", 
+			"data": "http://www.gbpen.com", 
 			"link": "javascript:void(0);", 
 			"type": "link", 
 			"enable": 1
