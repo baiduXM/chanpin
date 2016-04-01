@@ -172,7 +172,7 @@ function jqueryfunc() {
             });
 
             // 添加返回顶部事件
-            $quickbar_nav.on('click', '#quickbar_top', function(event) {
+            $quickbar_nav.bind('click'/*, '#quickbar_top'*/, function(event) {
                 var speed = 300; //滑动的速度
                 $('html,body').animate({
                     scrollTop: 0
