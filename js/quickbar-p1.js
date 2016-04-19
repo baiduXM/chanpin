@@ -1,4 +1,4 @@
-﻿// jquery文件是否存在
+// jquery文件是否存在
 if (typeof jQuery == 'undefined') {
     var jsjQuery = document.createElement("script");
     jsjQuery.setAttribute("type", "text/javascript");
