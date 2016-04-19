@@ -218,7 +218,7 @@ function jqueryfunc() {
             }
 
             $('.hoverbox_con ul li a').click(function(){
-                window.location.href=this.href;
+                window.open (this.href);
             })
 
             $('.quickbar_map a').click(function(){
