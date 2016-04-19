@@ -217,7 +217,13 @@ function jqueryfunc() {
 
             }
 
+            $('.hoverbox_con ul li a').click(function(){
+                window.location.href=this.href;
+            })
 
+            $('.quickbar_map a').click(function(){
+                window.open (this.href);
+            })
 
             //分享按钮的hover事件，计算长度
             $('.quickbar_nav ul li.quickbar_share').hover(function() {
