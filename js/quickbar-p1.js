@@ -229,7 +229,11 @@ function jqueryfunc() {
             $('.quickbar_map a').click(function(){
                 window.open (this.href);
             })
-
+            //外链失效问题添加点击事件
+            $(".quickbar_nav .quickbar_link").click(function(){
+            	var link = $('.quickbar_link a').attr("href");
+            	window.open(link);
+            });
             //分享按钮的hover事件，计算长度
             $('.quickbar_nav ul li.quickbar_share').hover(function() {
                 $('.quickbar_nav ul li.quickbar_share .quickbar_hoverbox').css('width', share_hoverbox_width + 'px');
