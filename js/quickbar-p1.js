@@ -113,6 +113,11 @@ function jqueryfunc() {
                         li_class = "quickbar_map";
                         li_target = 'target="_blank"';
                     } else if (v.type == 'link') { //外链
+                        if(v.link.indexOf('<{}>')){
+                            var linkArr = v.data.split("<{}>");
+                            v.name = linkArr[0];
+                            v.link = linkArr[1];
+                        }
                         li_target = 'target="_blank"';
                     } else if (v.type == 'sms') { //短信
                         return true;﻿

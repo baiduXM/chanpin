@@ -93,6 +93,13 @@ function jqueryfunc(){
 				}else if (v.type == 'follow') {
 					var idAttr = 'id="follow_btn"';
 					follow_img = '<div class="follow_img"><img src="' + v.data + '" alt=""/></div>';
+				}else if (v.type == 'link') {
+					var idAttr = '';
+					if (v.data.indexOf('<{}>')) {
+						var linkArr = v.data.split("<{}>");
+						v.name = linkArr[0];
+						v.link = linkArr[1];
+					}
 				}else{
 					var idAttr = '';
 				}
