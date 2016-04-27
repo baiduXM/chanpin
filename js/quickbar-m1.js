@@ -95,7 +95,7 @@ function jqueryfunc(){
 					follow_img = '<div class="follow_img"><img src="' + v.data + '" alt=""/></div>';
 				}else if (v.type == 'link') {
 					var idAttr = '';
-					if (v.data.indexOf('<{}>')) {
+					if (v.data.indexOf('<{}>') >= 0) {
 						var linkArr = v.data.split("<{}>");
 						v.name = linkArr[0];
 						v.link = linkArr[1];
