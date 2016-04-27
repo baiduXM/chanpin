@@ -113,6 +113,7 @@ function jqueryfunc() {
                         li_class = "quickbar_map";
                         li_target = 'target="_blank"';
                     } else if (v.type == 'link') { //外链
+                    	li_class = "quickbar_link";
                         if(v.link.indexOf('<{}>') >= 0){
                             var linkArr = v.data.split("<{}>");
                             v.name = linkArr[0];
