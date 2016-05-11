@@ -74,6 +74,11 @@ $(".tempWrap img").click(function(){
 		browsenew($(this));
 	}
 });
+$(".focusBox img").click(function(){
+	if($(this).parents("a").attr("href")==undefined){
+		browsenew($(this));
+	}
+});
 function setwh(src){
 	var img = new Image();
 	img.src =src;
@@ -96,10 +101,16 @@ function browsenew(obj){
 	}
 	var img_html='';
 	var show_src=obj.attr("src");
+	var imgs=[];
 	num=0;
 	obj.parents('ul').children('li').each(function(){
 		if($(this).hasClass('clone')){
 			return true;
+		}
+		if($.inArray($(this).find('img').attr("src"),imgs)+1){
+			return true;
+		}else{
+			imgs[num]=$(this).find('img').attr("src");
 		}
 		var show_img=$(this).find('img').attr("src")==show_src?'':'style="display:none"';
 		img_html +='<img class="imgpreview'+(show_img?'':' show_img')+'" id="img_'+num+'" src="'+$(this).find('img').attr("src")+'" '+show_img+'/>';
