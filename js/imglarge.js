@@ -56,9 +56,6 @@ $(document).keyup(function(e){
 		next_photo();
 	}
 });
-$(document).scroll(function(){
-	$(".mimgbrowse").css("top",$("body").scrollTop()+"px");
-});
 $(".bd img").click(function(){
 	if($(this).parents("a").attr("href")==undefined){
 		browsenew($(this));
@@ -118,7 +115,6 @@ function browsenew(obj){
 	});
 	var html='<div class="mimgbrowse" target="img"><div class="imgfade"></div><div class="mbrowse" >'+img_html+'<a class="prev" href="javascript:void(0);"></a><a class="next" href="javascript:void(0);"></a></div></div>';
 	$("body").append(html);
-	$(".mimgbrowse").css("top",$("body").scrollTop()+"px");
 	setwh(obj.attr("src"));
 }
 });

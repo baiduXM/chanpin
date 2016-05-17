@@ -1,0 +1,6 @@
+div.float{width:100px;text-align: right;position:fixed;z-index:99999;}
+a.popClose{bottom:-25px;right:5px;position: relative;cursor:pointer;}
+.float img{width:100%;box-shadow: 0 0 10px black;}
+
+
+
