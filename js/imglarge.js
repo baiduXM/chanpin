@@ -100,7 +100,7 @@ function browsenew(obj){
 	var show_src=obj.attr("src");
 	var imgs=[];
 	num=0;
-	obj.parents('ul').children('li').each(function(){
+	obj.parents('ul').find('li').each(function(){
 		if($(this).hasClass('clone')){
 			return true;
 		}
