@@ -12,6 +12,9 @@ window.configQuickbar = {
 	}
 };
 
+
+
+
 // 初始化事件
 // 返回顶部
 window.Quickbar_backtoTop = function() {
