@@ -178,13 +178,13 @@ function jqueryfunc() {
             });
 
             // 添加返回顶部事件
-            $quickbar_nav.bind('click'/*, '#quickbar_top'*/, function(event) {
+            /*$quickbar_nav.bind('click', '#quickbar_top', function(event) {
                 var speed = 300; //滑动的速度
                 $('html,body').animate({
                     scrollTop: 0
                 }, speed);
                 return false;
-            });
+            });*/
             //将数据插入页面
             $('body').prepend($quickbar_nav);
             
