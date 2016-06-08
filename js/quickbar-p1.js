@@ -76,6 +76,7 @@ function jqueryfunc() {
                         if (v.data && (typeof v.data === 'string')) {
                             data_arr = v.data.split(',');
                         }  
+                        v.link = v.link?v.link:'javascript:;';
                         var bdsharebtns = "";
                         $.each(data_arr, function(index, val) {
                             switch (val) {
