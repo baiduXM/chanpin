@@ -82,6 +82,7 @@ function jqueryfunc(){
 			var li_nav = '';
 			var search_form = '';
 			var follow_img = '';
+			var fixedLang = dataQuickbar.config.language == undefined ? 'cn':dataQuickbar.config.language;
 			// 获取底部导航图标数据
 			$.each(dataQuickbar.quickbar, function(k,v) {
 				if (typeof v.enable !== 'undefined' && !v.enable) return true;
@@ -89,7 +90,7 @@ function jqueryfunc(){
 					var idAttr = 'id="share_btn"';
 				}else if(v.type == 'search'){
 					var idAttr = 'id="search_btn"';
-					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="请输入搜索关键字"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="搜索">' + '</span></form></div>';
+					search_form = '<div class="quickbar_search">' + '<form id="quickbar_form" class="fm" action="' + v.data + '" method="GET" name="fm">' + '<span class="s_ipt_w">' + '<input type="text" id="quickbar_kw" name="s" class="s_ipt" placeholder="' + dataLang.searchPlaceholder[fixedLang] + '"/>' + '</span>' + '<span class="s_btn_wr">' + '<input type="submit" class="s_btn" id="quickbar_submit" value="' + dataLang.search[fixedLang] + '">' + '</span></form></div>';
 				}else if (v.type == 'follow') {
 					var idAttr = 'id="follow_btn"';
 					follow_img = '<div class="follow_img"><img src="' + v.data + '" alt=""/></div>';
@@ -142,28 +143,28 @@ function jqueryfunc(){
 				<div class="quickbar-sharebox">\n\
 					<div class="bn-share-con">\n\
 						<div class="thumbs-cotnainer">\n\
-							<div class="share-icon"> <a title="分享到Qzone空间" href="javascript:void(0);" class="qqzone"><img src="'+share_pic.Qzone+'" width="60" height="60"><dt class=" title">Qzone</dt></a></div> \n\
-							<div class="share-icon"><a title="分享到腾讯微博" href="javascript:void(0);"  class="qqweibo"><img src="'+share_pic.qqweibo+'" width="60" height="60"><dt class=" title">腾讯微博</dt></a></div> \n\
-							<div class="share-icon"> <a title="分享到百度收藏" href="javascript:void(0);" class="baidusoucang"><img src="'+share_pic.baidu+'" width="60" height="60"><dt class=" title">百度收藏</dt></a></div>\n\
-							<div class="share-icon"><a title="分享到新浪微博" href="javascript:void(0)" class="xinlang"><img src="'+share_pic.weibo+'" width="60" height="60"><dt class=" title">新浪微博</dt></a></div>  \n\
+							<div class="share-icon"> <a title="' + dataLang.share.shareQzone.shareTitle[fixedLang] + '" href="javascript:void(0);" class="qqzone"><img src="'+share_pic.Qzone+'" width="60" height="60"><dt class=" title">' + dataLang.share.shareQzone.shareCon[fixedLang] + '</dt></a></div> \n\
+							<div class="share-icon"><a title="' + dataLang.share.shareTen.shareTitle[fixedLang] + '" href="javascript:void(0);"  class="qqweibo"><img src="'+share_pic.qqweibo+'" width="60" height="60"><dt class=" title">' + dataLang.share.shareTen.shareCon[fixedLang] + '</dt></a></div> \n\
+							<div class="share-icon"> <a title="' + dataLang.share.shareBaidu.shareTitle[fixedLang] + '" href="javascript:void(0);" class="baidusoucang"><img src="'+share_pic.baidu+'" width="60" height="60"><dt class=" title">' + dataLang.share.shareBaidu.shareCon[fixedLang] + '</dt></a></div>\n\
+							<div class="share-icon"><a title="' + dataLang.share.shareSina.shareTitle[fixedLang] + '" href="javascript:void(0)" class="xinlang"><img src="'+share_pic.weibo+'" width="60" height="60"><dt class=" title">' + dataLang.share.shareSina.shareCon[fixedLang] + '</dt></a></div>  \n\
 						</div>\n\
 					</div>\n\
-					<div class="share-cance">取消</div>     \n\
+					<div class="share-cance">' + dataLang.share.shareClose[fixedLang] + '</div>     \n\
 				</div>\n\
 				<div class="quickbar-tips"><span class="tips-close">×</span><div class="tips-content"></div></div>\n\
 				<div id="quickbar" class="fixed public-bg1" style="background:'+dataQuickbar.config.style.mainColor+'">\n\
 					<ul>\n\
-					<li><a href="#" id="quickbar-navs-btn"><p class="fix_icon"><i class="iconfont">&#xe603;</i></p><p class="title">导航</p></a></li>\n\
+					<li><a href="#" id="quickbar-navs-btn"><p class="fix_icon"><i class="iconfont">&#xe603;</i></p><p class="title">' + dataLang.quickbar.quickbarColumen.nav[fixedLang] + '</p></a></li>\n\
 					'+li_btn+'\n\
 					</ul>\n\
 				</div>\n\
 				'+search_form+follow_img+'\n\
 			').wrapInner('<div class="body public-bg2">\n\
 				<div id="quickbar-navs" class="page-prev public-bg1" style="background:'+dataQuickbar.config.style.mainColor+'">\n\
-					<h1 class="quickbar-navs-top public-color1" style="'+(dataQuickbar.config.style.secondColor ? 'background:'+dataQuickbar.config.style.secondColor : '')+'"><span class="quickbar-navs-close" style="background:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">×</span>快速导航</h1>\n\
+					<h1 class="quickbar-navs-top public-color1" style="'+(dataQuickbar.config.style.secondColor ? 'background:'+dataQuickbar.config.style.secondColor : '')+'"><span class="quickbar-navs-close" style="background:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">×</span>' + dataLang.quickbar.quickbarTitle[fixedLang] + '</h1>\n\
 					<div class="quickbar-navs-m">\n\
 						<ul class="quickbar-navs-list">\n\
-							<!--<li><a href="index.html">首 页</a></li>-->\n\
+							<!--<li><a href="index.html">' + dataLang.quickbar.quickbarColumen.index[fixedLang] + '</a></li>-->\n\
 							'+li_nav+'\n\
 						</ul>\n\
 					</div>\n\
@@ -175,7 +176,7 @@ function jqueryfunc(){
 					$('#quickbar-wrap > .quickbar-tips .tips-content').append($(dataQuickbar.config.module));
 				}else if (typeof dataQuickbar.config.module === 'object') {
 					if (dataQuickbar.config.module.tel) {
-						$('#quickbar-wrap > .quickbar-tips .tips-content').append('<i class="iconfont">&#xe609;</i>咨询热线：' + dataQuickbar.config.module.tel);
+						$('#quickbar-wrap > .quickbar-tips .tips-content').append('<i class="iconfont">&#xe609;</i>' + dataLang.quickbar.quickbarColumen.advisory[fixedLang] + '：' + dataQuickbar.config.module.tel);
 					}
 				}
 				if ($('#quickbar-wrap > .quickbar-tips .tips-content').html()) {
