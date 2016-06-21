@@ -1,0 +1,72 @@
+langCallback({
+	"search": {
+		"cn": "搜索",
+		"en": "search"
+	},
+	"searchPlaceholder": {
+		"cn": "请输入搜索关键字",
+		"en": "Enter search keywords"
+	},
+	"shareTitle": {
+		"shareQzone": {
+			"cn": "分享到Qzone空间",
+			"en": "Share to Qzone space"
+		},
+		"shareTen": {
+			"cn": "分享到腾讯微博",
+			"en": "Share to Tencent micro-blog"
+		},
+		"shareBaidu": {
+			"cn": "分享到百度收藏",
+			"en": "Share to Baidu collection"
+		},
+		"shareSina": {
+			"cn": "分享到新浪微博",
+			"en": "Share to Micro-blog Sina"
+		}
+	},
+	"shareCon": {
+		"shareQzone": {
+			"cn": "Qzone",
+			"en": "Qzone"
+		},
+		"shareTen": {
+			"cn": "腾讯微博",
+			"en": "Tencent micro-blog"
+		},
+		"shareBaidu": {
+			"cn": "百度收藏",
+			"en": "Baidu collection"
+		},
+		"shareSina": {
+			"cn": "新浪微博",
+			"en": "Micro-blog Sina"
+		}
+	},
+	"shareClose": {
+		"cn": "取消",
+		"en": "Close"
+	},
+	"quickbarTitle": {
+		"cn": "快速导航",
+		"en": "Fast Navigation"
+	},
+	"quickbarColumen": {
+		"nav": {
+			"cn": "导航",
+			"en": "Navigation"
+		},
+		"index": {
+			"cn": "首 页",
+			"en": "Home"
+		},
+		"advisory": {
+			"cn": "咨询热线",
+			"en": "Hotline"
+		},
+		"customerService": {
+			"cn": "客服咨询",
+			"en": "Online Customer Service"
+		}
+	}
+})

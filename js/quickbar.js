@@ -3,6 +3,7 @@ window.CustomerID = 0;
 window.CustomerTYPE = 'pc';
 window.configQuickbar = {
 	dataurl : 'http://chanpin.xm12t.com.cn/json/quickbar.json',
+	langurl : 'http://chanpin.xm12t.com.cn/json/quickbar-lang.json',
 	viewcounturl : 'http://swap.5067.org/Viewcount/0000/pc.html',
 	fonts : {
 		eot : 'http://chanpin.xm12t.com.cn/fonts/iconfont.eot',
@@ -84,6 +85,17 @@ jsData.onload = jsData.onreadystatechange = function() {
 	jsData.parentNode.removeChild(jsData);
 };
 (document.head || document.getElementsByTagName('head')[0]).appendChild(jsData);
+// 加载quickbar语言包
+window.langCallback = function(dataLang){
+	window.dataLang = dataLang;
+};
+var lanData = document.createElement('script');
+lanData.setAttribute('type', 'text/javascript');
+lanData.setAttribute('src', configQuickbar.langurl + '?callback=langCallback');
+lanData.onload = lanData.onreadystatechange = function() {
+	lanData.parentNode.removeChild(lanData);
+};
+(document.head || document.getElementsByTagName('head')[0]).appendChild(lanData);
 
 // 加载字体
 var iconfontStyle = document.createElement('style');
