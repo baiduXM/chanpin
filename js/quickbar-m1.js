@@ -98,22 +98,26 @@ function jqueryfunc(){
 					var idAttr = '';
 					if (v.data.indexOf('<{}>') >= 0) {
 						var linkArr = v.data.split("<{}>");
-						v.name = linkArr[0];
+						if (fixedLang=='cn') {
+							v.name = linkArr[0];
+						}else{
+							v.en_name = linkArr[0];
+						}
 						v.link = linkArr[1];
 					}
 				}else{
 					var idAttr = '';
 				}
-				li_btn += '<li><a href="'+(typeof v.link !== 'undefined' ? v.link : 'javascript:void(0)')+'" '+idAttr+'><p class="fix_icon">'+(v.icon == null ? '<img src="'+v.image+'" width="33" width="33">' : '<i class="iconfont">'+v.icon+'</i>' )+'</p><p class="title">'+v.name+'</p></a></li>';
+				li_btn += '<li><a href="'+(typeof v.link !== 'undefined' ? v.link : 'javascript:void(0)')+'" '+idAttr+'><p class="fix_icon">'+(v.icon == null ? '<img src="'+v.image+'" width="33" width="33">' : '<i class="iconfont">'+v.icon+'</i>' )+'</p><p class="title">'+(fixedLang=='cn'?v.name:v.en_name)+'</p></a></li>';
 			});
 			// 获取侧边导航数据
 			$.each(dataQuickbar.catlist, function(k,v) {
 				if(v.childmenu == null){
-					li_nav += '<li><a href="'+v.url+'">'+v.name+'</a></li>';
+					li_nav += '<li><a href="'+v.url+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>';
 				}else{
 					li_nav += '<li class="menu_head">\n\
 					<dl class="qbnav-icon"><span class="qbnav-icon1" style="color:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">-</span><span class="icon2" style="color:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">+</span></dl>\n\
-					<a href="'+v.url+'">'+v.name+'</a></li>\n\
+					<a href="'+v.url+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>\n\
 					<li class="menu_body">';
 					!function(childmenu, deep) {
 						deep++;
