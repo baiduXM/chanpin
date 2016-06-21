@@ -38,6 +38,16 @@ langCallback({
 				"en": "Baidu collection"
 			}
 		},
+		"shareBaiduCenter": {
+			"shareTitle": {
+				"cn": "分享到百度中心",
+				"en": "Share to Baidu center"
+			},
+			"shareCon": {
+				"cn": "百度中心",
+				"en": "Baidu collection"
+			}
+		},
 		"shareSina": {
 			"shareTitle": {
 				"cn": "分享到新浪微博",
@@ -48,6 +58,16 @@ langCallback({
 				"en": "Micro-blog Sina"
 			}
 		},
+		"shareWeChat": {
+			"shareTitle": {
+				"cn": "分享到微信",
+				"en": "Share to WeChat"
+			},
+			"shareCon": {
+				"cn": "微信",
+				"en": "WeChat"
+			}
+		},
 		"shareClose": {
 			"cn": "取消",
 			"en": "Close"
@@ -56,12 +76,12 @@ langCallback({
 	"quickbar": {
 		"quickbarTitle": {
 			"cn": "快速导航",
-			"en": "Fast Navigation"
+			"en": "Fast Nav"
 		},
 		"quickbarColumen": {
 			"nav": {
 				"cn": "导航",
-				"en": "Navigation"
+				"en": "Nav"
 			},
 			"index": {
 				"cn": "首 页",
