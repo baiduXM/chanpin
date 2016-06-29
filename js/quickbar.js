@@ -46,7 +46,14 @@ document.getElementById("quickbar-share") !== null ? document.getElementById("qu
 		}
 	}
 	if (target.src.indexOf('?') == -1 || target.src.substring(target.src.indexOf('?') + 1).indexOf('debug') == -1) {
-		configQuickbar.dataurl = '/quickbar.json';
+		var winLoca = window.location.href;
+		winLoca = winLoca.replace(/(^http\:\/\/*)/g, "");
+		winLoca = winLoca.split('/');
+		if(winLoca[1]=='mobile'){
+			configQuickbar.dataurl = '/mobile/quickbar.json';
+		}else{
+			configQuickbar.dataurl = '/quickbar.json';
+		}
 		if (target.src.indexOf('?') !== -1) {
 			var param = target.src.substring(target.src.indexOf('?') + 1);
 			window.CustomerID = param.match(/(\d*)(.*)/)[1];
