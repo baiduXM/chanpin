@@ -64,6 +64,22 @@ previewJSQuickbar = window.previewJSQuickbar || {};
 previewJSQuickbar.style = previewJSQuickbar.style || {};
 window.quickbarCallback = function(dataQuickbar) {
 	// 获取配置信息
+	window.winLoca = window.location.href;
+	winLoca = winLoca.replace(/(^http\:\/\/*)/g, "");
+	winLoca = winLoca.split('/');
+	if(winLoca[1]=='mobile'){
+		if(dataQuickbar.config.type!='m1' && dataQuickbar.config.type!='custom'){
+			configQuickbar.dataurl='/mobile/quickbar.json';
+			var jssData = document.createElement('script');
+			jssData.setAttribute('type', 'text/javascript');
+			jssData.setAttribute('src', configQuickbar.dataurl + '?callback=quickbarCallback');
+			jssData.onload = jsData.onreadystatechange = function() {
+				jssData.parentNode.removeChild(jssData);
+			};
+			(document.head || document.getElementsByTagName('head')[0]).appendChild(jssData);
+			return false;
+		}
+	}
 	if (previewJSQuickbar.enable === false || !dataQuickbar.config.enable) return false;
 	dataQuickbar.config.style.mainColor    =  previewJSQuickbar.style.mainColor || dataQuickbar.config.style.mainColor || '#AAA';
 	dataQuickbar.config.style.secondColor    =  previewJSQuickbar.style.secondColor || dataQuickbar.config.style.secondColor || '#CCC';
