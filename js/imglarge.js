@@ -56,6 +56,11 @@ $(document).keyup(function(e){
 		next_photo();
 	}
 });
+$(".focus img").click(function(){
+	if($(this).parents("a").attr("href")==undefined){
+		browsenew($(this));
+	}
+});
 $(".bd img").click(function(){
 	if($(this).parents("a").attr("href")==undefined){
 		browsenew($(this));
