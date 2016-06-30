@@ -1,7 +1,7 @@
 if (typeof jQuery == 'undefined') {
     var jsjQuery = document.createElement("script");
     jsjQuery.setAttribute("type", "text/javascript");
-    jsjQuery.setAttribute("src", "http://chanpin.xm12t.com.cn/js/jquery.min.js");
+    jsjQuery.setAttribute("src", "http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js");
     jsjQuery.onload = jsjQuery.onreadystatechange = jqueryfunc;
     var headobj = document.getElementsByTagName("head")[0];headobj.appendChild(jsjQuery);
 } else {
