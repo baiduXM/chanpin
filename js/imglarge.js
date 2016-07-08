@@ -81,6 +81,11 @@ $(".focusBox img").click(function(){
 		browsenew($(this));
 	}
 });
+$(".imglarge img").click(function(){
+	if($(this).parents("a").attr("href")==undefined){
+		browsenew($(this));
+	}
+});
 function setwh(src){
 	var img = new Image();
 	img.src =src;
