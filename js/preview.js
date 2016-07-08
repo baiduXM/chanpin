@@ -39,7 +39,7 @@ var PREVIEW_CONFIG = {
 	favicon: 'images/favicon.ico',
 	stylecolor: 'blue',
 	footprint: '<p>copyright 2014-2015  备案号：闽ICP备******号<br />多输出一行调试</p><p class="techsupport">技术支持：<a href="http://www.12t.cn/">厦门易尔通网络科技有限公司</a> 人才支持：<a href="http://www.xgzrc.com/">厦门人才网</a></p>',
-	footscript: '<!-- 这里将会输出底部脚本代码 -->\n<script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/quickbar.js?debug"></script>',
+	footscript: '<!-- 这里将会输出底部脚本代码 -->\n<script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/quickbar.js?debug"></script><script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/img.js"></script>',
 	headscript: '<!-- 这里将会输出头部脚本代码 -->',
 	navs: [{
 		name: '新闻列表',
