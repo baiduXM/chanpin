@@ -57,32 +57,32 @@ $(document).keyup(function(e){
 	}
 });
 $(".focus img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
 $(".bd img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
 $(".slides img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
 $(".tempWrap img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
 $(".focusBox img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
 $(".imglarge img").click(function(){
-	if($(this).parents("a").attr("href")==undefined){
+	if($(this).parents("a").length==0){
 		browsenew($(this));
 	}
 });
