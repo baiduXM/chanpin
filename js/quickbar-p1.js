@@ -87,7 +87,7 @@ function jqueryfunc() {
                                     break;
                                 case 'tqq':
                                     shareable++;
-                                    bdsharebtns += '<a href="#" class="bds_tqq" data-cmd="tqq" title="' + dataLang.share.shareTen.shareTitle[fixedLang] + '">';
+                                    bdsharebtns += '<a class="bds_tqq" title="' + dataLang.share.shareTen.shareTitle[fixedLang] + '">';
                                     break;
                                 case 'tsina':
                                     shareable++;
@@ -228,7 +228,7 @@ function jqueryfunc() {
                 }
 
             }
-
+			$(".bds_tqq").click(function(){window.open("http://v.t.qq.com/share/share.php?url="+url+"&title="+document.title+"&appkey=xx");});
             $('.hoverbox_con ul li a').click(function(){
                 window.open (this.href);
             })
