@@ -228,7 +228,7 @@ function jqueryfunc() {
                 }
 
             }
-			$(".bds_tqq").click(function(){window.open("http://v.t.qq.com/share/share.php?url="+window.location.href+"&title="+document.title+"&appkey=xx");});
+			$(".bds_tqq").click(function(){window.open("http://v.t.qq.com/share/share.php?url="+encodeURIComponent(window.location.href)+"&title="+encodeURIComponent(document.title));});
             $('.hoverbox_con ul li a').click(function(){
                 window.open (this.href);
             })
