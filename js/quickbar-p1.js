@@ -87,7 +87,7 @@ function jqueryfunc() {
                                     break;
                                 case 'tqq':
                                     shareable++;
-                                    bdsharebtns += '<a class="bds_tqq" title="' + dataLang.share.shareTen.shareTitle[fixedLang] + '">';
+                                    bdsharebtns += '<a class="bds_tqq" title="' + dataLang.share.shareTen.shareTitle[fixedLang] + '"></a>';
                                     break;
                                 case 'tsina':
                                     shareable++;
