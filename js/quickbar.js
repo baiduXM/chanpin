@@ -63,6 +63,7 @@ document.getElementById("quickbar-share") !== null ? document.getElementById("qu
 previewJSQuickbar = window.previewJSQuickbar || {};
 previewJSQuickbar.style = previewJSQuickbar.style || {};
 window.quickbarCallback = function(dataQuickbar) {
+	jsData.parentNode.removeChild(jsData);
 	// 获取配置信息
 	window.winLoca = window.location.href;
 	winLoca = winLoca.replace(/(^http\:\/\/*)/g, "");
@@ -98,27 +99,16 @@ var jsData = document.createElement('script'),
 	jsDataLoad = true;
 jsData.setAttribute('type', 'text/javascript');
 jsData.setAttribute('src', configQuickbar.dataurl + '?callback=quickbarCallback');
-jsData.onload = jsData.onreadystatechange = function() {
-	if(jsDataLoad){
-		jsDataLoad = false;
-		jsData.parentNode.removeChild(jsData);
-	}
-};
 (document.head || document.getElementsByTagName('head')[0]).appendChild(jsData);
 // 加载quickbar语言包
 window.langCallback = function(dataLang){
 	window.dataLang = dataLang;
+	lanData.parentNode.removeChild(lanData);
 };
 var lanData = document.createElement('script'),
 	lanDataLoad = true;
 lanData.setAttribute('type', 'text/javascript');
 lanData.setAttribute('src', configQuickbar.langurl + '?callback=langCallback');
-lanData.onload = lanData.onreadystatechange = function() {
-	if(lanDataLoad){
-		lanDataLoad = false;
-		lanData.parentNode.removeChild(lanData);
-	}
-};
 (document.head || document.getElementsByTagName('head')[0]).appendChild(lanData);
 
 // 加载字体
