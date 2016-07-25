@@ -94,33 +94,45 @@ window.quickbarCallback = function(dataQuickbar) {
 	quickbarMain.setAttribute('src', 'http://chanpin.xm12t.com.cn/js/quickbar-' + dataQuickbar.config.type + '.js');
 	(document.head || document.getElementsByTagName('head')[0]).appendChild(quickbarMain);
 };
-var jsData = document.createElement('script');
+var jsData = document.createElement('script'),
+	jsDataLoad = true;
 jsData.setAttribute('type', 'text/javascript');
 jsData.setAttribute('src', configQuickbar.dataurl + '?callback=quickbarCallback');
 jsData.onload = jsData.onreadystatechange = function() {
-	jsData.parentNode.removeChild(jsData);
+	if(jsDataLoad){
+		jsDataLoad = false;
+		jsData.parentNode.removeChild(jsData);
+	}
 };
 (document.head || document.getElementsByTagName('head')[0]).appendChild(jsData);
 // 加载quickbar语言包
 window.langCallback = function(dataLang){
 	window.dataLang = dataLang;
 };
-var lanData = document.createElement('script');
+var lanData = document.createElement('script'),
+	lanDataLoad = true;
 lanData.setAttribute('type', 'text/javascript');
 lanData.setAttribute('src', configQuickbar.langurl + '?callback=langCallback');
 lanData.onload = lanData.onreadystatechange = function() {
-	lanData.parentNode.removeChild(lanData);
+	if(lanDataLoad){
+		lanDataLoad = false;
+		lanData.parentNode.removeChild(lanData);
+	}
 };
 (document.head || document.getElementsByTagName('head')[0]).appendChild(lanData);
 
 // 加载字体
-var iconfontStyle = document.createElement('style');
-iconfontStyle.setAttribute('type', 'text/css');
-iconfontStyle.setAttribute('rel', 'stylesheet');
-iconfontStyle.setAttribute('rev', 'stylesheet');
-iconfontStyle.innerHTML = '@font-face {font-family: "iconfont"; src: url("'+configQuickbar.fonts.eot+'");/* IE9*/ src: url("'+configQuickbar.fonts.eot+'?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("'+configQuickbar.fonts.woff+'") format("woff"),/* chrome、firefox */ url("'+configQuickbar.fonts.ttf+'") format("truetype"),/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("'+configQuickbar.fonts.svg+'#iconfont") format("svg");/* iOS 4.1- */}'
-	+'.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}';
-(document.head || document.getElementsByTagName('head')[0]).appendChild(iconfontStyle);
+//var iconfontStyle = document.createElement('style');
+//iconfontStyle.setAttribute('type', 'text/css');
+//iconfontStyle.setAttribute('rel', 'stylesheet');
+//iconfontStyle.setAttribute('rev', 'stylesheet');
+//iconfontStyle.innerHTML = '@font-face {font-family: "iconfont"; src: url("'+configQuickbar.fonts.eot+'");/* IE9*/ src: url("'+configQuickbar.fonts.eot+'?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("'+configQuickbar.fonts.woff+'") format("woff"),/* chrome、firefox */ url("'+configQuickbar.fonts.ttf+'") format("truetype"),/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("'+configQuickbar.fonts.svg+'#iconfont") format("svg");/* iOS 4.1- */}'
+//	+'.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}';
+//(document.head || document.getElementsByTagName('head')[0]).appendChild(iconfontStyle);
+var iconfontStyle = document.createElement('div');
+iconfontStyle.innerHTML = '_<style type="text/css" rel="stylesheet" rev="stylesheet">@font-face {font-family: "iconfont"; src: url("'+configQuickbar.fonts.eot+'");/* IE9*/ src: url("'+configQuickbar.fonts.eot+'?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("'+configQuickbar.fonts.woff+'") format("woff"),/* chrome、firefox */ url("'+configQuickbar.fonts.ttf+'") format("truetype"),/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("'+configQuickbar.fonts.svg+'#iconfont") format("svg");/* iOS 4.1- */}'+'.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}</style>';
+iconfontStyle.removeChild(iconfontStyle.firstChild);
+(document.head || document.getElementsByTagName('head')[0]).appendChild(iconfontStyle.firstChild);
 
 // 加载访问次数
 if (document.getElementById("article-viewcount") !== null) {
