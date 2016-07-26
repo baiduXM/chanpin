@@ -193,7 +193,9 @@ function jqueryfunc() {
             });*/
             //将数据插入页面
             $('body').prepend($quickbar_nav);
-            
+            if(navigator.userAgent.indexOf("MSIE 8.0")>0) {
+				$quickbar_nav.css("top","10%");
+			}
             //隐藏和显示返回顶部按钮
             $(window).scroll(function() {
                 if ($(document).scrollTop() <= 300) {
