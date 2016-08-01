@@ -62,8 +62,12 @@ document.getElementById("quickbar-share") !== null ? document.getElementById("qu
 // 加载数据
 previewJSQuickbar = window.previewJSQuickbar || {};
 previewJSQuickbar.style = previewJSQuickbar.style || {};
+var jssData;
 window.quickbarCallback = function(dataQuickbar) {
-	jsData.parentNode.removeChild(jsData);
+	if(jsData.parentNode)
+		jsData.parentNode.removeChild(jsData);
+	else
+		jssData.parentNode.removeChild(jssData);
 	// 获取配置信息
 	window.winLoca = window.location.href;
 	winLoca = winLoca.replace(/(^http\:\/\/*)/g, "");
@@ -71,7 +75,7 @@ window.quickbarCallback = function(dataQuickbar) {
 	if(winLoca[1]=='mobile'){
 		if(dataQuickbar.config.type!='m1' && dataQuickbar.config.type!='custom'){
 			configQuickbar.dataurl='/mobile/quickbar.json';
-			var jssData = document.createElement('script');
+			jssData = document.createElement('script');
 			jssData.setAttribute('type', 'text/javascript');
 			jssData.setAttribute('src', configQuickbar.dataurl + '?callback=quickbarCallback');
 			jssData.onload = jsData.onreadystatechange = function() {
