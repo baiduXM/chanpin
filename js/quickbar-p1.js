@@ -49,7 +49,7 @@ function jqueryfunc() {
                         data_arr = v.data.split('|');
                     }
                     if (data_arr.length == 1) {
-                        im_li += '<li><a href="' + v.link + '"><i class="icon iconfont">&#xe64c;</i><span>' + data_arr[0].split(':')[0] + '</span></a></li>';
+                        im_li += '<li><a target="_blank" href="' + v.link + '"><i class="icon iconfont">&#xe64c;</i><span>' + data_arr[0].split(':')[0] + '</span></a></li>';
                     } else if (data_arr.length > 1) {
                         $.each(data_arr, function(im_k, im_v) {
                             var im_v_arr = im_v.split('@');
