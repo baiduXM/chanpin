@@ -152,7 +152,7 @@ function jqueryfunc() {
                         quickbar_hoverbox = '<div class="quickbar_hoverbox"><img src="' + v.data + '" alt=""/></div>';
                     }
                     quickbar_box = '<div class="quickbar_box">' + '<span class="icon">' + (v.icon == null ? '<img src="' + v.image + '"/>' : '<i class="icon iconfont">' + v.icon + '</i>') + '</span></div>';
-                    li_btn = '<li class="' + li_class + '"><a ' + li_target + ' href="' + v.link + '">' + quickbar_box + '</a>' + quickbar_hoverbox + '</li>';
+                    li_btn = '<li class="' + li_class + '"><a ' + li_target + ' href="' + (v.link?v.link:"javascript:;") + '">' + quickbar_box + '</a>' + quickbar_hoverbox + '</li>';
                 }
                 li_btns += li_btn;
             });
