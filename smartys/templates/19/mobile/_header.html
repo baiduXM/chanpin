@@ -1,0 +1,35 @@
+<header>
+    <div class="baner-ny">
+          	<div class="logo logo-ny"><img src="{$logo}" width="100%" heght="100%"></div>
+	<div id="slideBox" class="slideBox1">
+    <div class="hd">
+            <ul></ul>
+      </div>
+      <span class="next public_color">&gt;</span>
+      <span class="prev public_color">&lt;</span>
+	<div class="bd">
+		<ul>
+			{foreach name=slidepics item=slidepic from=$global.slidepics}
+			<li><a class="pic" href="{$slidepic.link}"><img src="{$slidepic.image}" /></a></li>
+			{/foreach}
+		</ul>
+	</div>
+	
+			</div>
+			
+   </div>
+   <div class="menu public_bg">
+            	<div class="nav">
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><span><a href="{$site_url}" class="public_color1">首页</a></span></div>
+					  {foreach name=key item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}" class="public_color1">{$nav.name}</a></span></div>
+                      {/foreach}
+                  </div>
+				</div>
+                </div>
+    </div>
+      </header>

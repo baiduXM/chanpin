@@ -1,0 +1,31 @@
+  <div class="header">
+      <div class="headbox">
+          <div class="logo"><a href="{$site_url}" title="返回首页"><img src="{$logo}" alt=""></a></div>     
+          <div class="menu">
+           
+              <ul id="nav" class="nav">
+                 {$limit = 5}
+                 <li class="nLi"  style="width:{100/($limit+1)}%"><a href="{$site_url}">网站首页</a></li>
+                  {foreach item=nav from=$navs}
+                    <li class="nLi {if $nav.current}on{/if}" style="width:{100/($limit+1)}%">
+                      <a href="{$nav.link}">{$nav.name}</a>
+                      {if $nav.childmenu}
+                        <ul class="sub">
+                          {foreach item=nav_list from=$nav.childmenu}
+                          <li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                          {/foreach}
+                        </ul>
+                      {/if}
+                    </li>
+                    {if $nav@index+1 gte $limit}{break}{/if}
+                  {/foreach}               
+              
+
+               </ul>
+
+
+
+          </div>      
+      </div>
+  
+    </div> 

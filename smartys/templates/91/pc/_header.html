@@ -1,0 +1,54 @@
+  <div class="menu">
+       <ul id="nav" class="nav">
+            <li class="nLi" style="width:{100/(($navs|count)+1)}%"><h3><a href="{$site_url}">网站首页</a></h3></li>
+            {foreach name=navs item=nav from=$navs}
+            <li class="{if $nav.current}on{/if} nLi" style="width:{100/(($navs|count)+1)}%">
+                <h3><a href="{$nav.link}">{$nav.name}</h3></a>
+                {if $nav.childmenu}
+                    <ul class="sub">
+                        {foreach key=key item=nav_list from=$nav.childmenu}
+                        <li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                        {/foreach}
+                    </ul>
+                {/if}
+            </li>
+            {/foreach}
+        </ul>  
+  </div>
+ 
+  
+    <!--banner-->
+    <div class="banner">
+      <div class="logo"><a href="{$site_url}"><img src="{$logo}"></a></div>
+
+        <div id="slideBox" class="slideBox">
+          <div class="hd">
+            <ul><li>1</li><li>2</li><li>3</li></ul>
+          </div>
+          <div class="bd">
+            <ul>
+
+              {foreach name=slidepics item=slidepic from=$global.slidepics}
+                    <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>       
+              {/foreach}
+            </ul>
+          </div>
+
+        
+
+        </div>        
+        <div class="bannerbg"><img src="{$site_url}images/bannerbg.png"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

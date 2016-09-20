@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<List>
+<Table>
+<title>标题1</title>
+<pubdate>2015-2-2</pubdate>
+<link>http://www.baidu.com</link>
+</Table>
+<Table>
+<title>标题12</title>
+<pubdate>2015-2-2</pubdate>
+<link>http://www.baidubaidu.com</link>
+</Table>
+<Table>
+<title>标题3</title>
+<pubdate>2015-2-2</pubdate>
+<link>http://www.baidubaidubaidu.com</link>
+</Table>
+<Table>
+<title>标题4</title>
+<pubdate>2015-2-2</pubdate>
+<link>http://www.baidubaidubaidubaidu.com</link>
+</Table>
+</List>

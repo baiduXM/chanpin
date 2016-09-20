@@ -1,0 +1,21 @@
+<div class="header">
+	<h1 class="logo"><a href="{$site_url}"><img src="{$logo}" alt="{$title}"/></a></h1>
+	<div class="nav">
+		<ul>
+		{$limit = 6}
+		{foreach name=navs item=nav from=$navs}
+		{if $navs|count lt $limit}{$limit = $navs|count}{/if}
+			<li style="width:{100/$limit-1}%"><a href="{$nav.link}">{$nav.name}</a></li>
+		{if $nav@index+1 eq $limit}{break}{/if}
+		{/foreach}
+		</ul>
+		<span><a href="javascript:void(0);" onclick="shoucang(document.title, window.location)" id="addfavorite">加入收藏</a></span>
+		<span class="ang_l"></span>
+		<span class="ang_r"></span>
+		<span class="ang_wl"></span>
+		<span class="ang_wr"></span>
+
+	</div>
+	<div class="clear"></div>
+	<div class="img-wrap edge"><img src="{$_header.lager_pic.image}" width="1200" alt="{$_header.lager_pic.title}"/><div class="shadow"></div></div>
+</div>

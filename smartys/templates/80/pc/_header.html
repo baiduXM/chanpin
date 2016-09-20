@@ -1,0 +1,52 @@
+<div class='banner '>
+		<div id="slideBox" class="slideBox">
+			<div class="hd">
+				<ul>
+				{foreach item=slidepic from=$_header.slidepics}
+					<li>{$slidepic@index+1}</li>
+				{/foreach}
+				</ul>
+			</div>
+			<div class="bd">
+				<ul>
+				{foreach name=slidepics item=slidepic from=$_header.slidepics}
+					<li><a href="{$slidepic.link}"><img src="{$slidepic.image}"/></a></li>
+				{/foreach}
+				</ul>
+			</div>
+			<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+		</div>
+
+			
+		<div class="header">
+			<div class="logo"><img src="{$logo}"></div>
+			<div class='mune'>
+				<ul id="nav" class="nav" >
+					{$litmit = 8}
+	              	{if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+						<li class="nLi" >
+							<a href="{$site_url}">网站首页</a>
+						</li>
+						{foreach item=nav from=$navs}
+						<li class="nLi {if $nav.current}current{/if}">
+							<a href="{$nav.link}">{$nav.name} </a>
+							{if $nav.childmenu}
+							<ul class="sub clearfix">
+								{foreach item=nav_list from=$nav.childmenu}
+								<li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+								{/foreach}
+								
+							</ul>
+							{/if}
+						</li>
+						{/foreach}
+				</ul>
+			</div>
+				<div class="telphone">
+				<span>{$contact.telephone}</span>
+					地 址：{$contact.address}
+				</div>
+		</div>
+	</div>

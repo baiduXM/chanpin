@@ -1,0 +1,21 @@
+<section>
+<h3><span>{$posnavs[0].name}</span>  {$posnavs[0].en_name}</h3>
+<div class="listbg">
+<ul>
+
+              {foreach item=nav from=$pagenavs}
+  <li class="yiji">
+    <a href="javascript:void(0);{$nav.link}" class="{if $nav.current}current{/if}">{$nav.name}</a>
+    {if $nav.childmenu}
+    <ul class="second">
+      {foreach item=nav_list from=$nav.childmenu}
+      <li><a href="{$nav_list.link}" class="{if $nav_list.current}current1{/if}">{$nav_list.name}</a></li>
+      {/foreach}
+    </ul>
+    {/if}
+  </li>
+  {/foreach}
+
+</ul>
+</div>
+</section>

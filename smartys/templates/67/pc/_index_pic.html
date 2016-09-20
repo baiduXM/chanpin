@@ -1,0 +1,15 @@
+<section>
+<div class="slide p_r">
+     <div class="pic_gd">
+        <ul>
+          
+          {foreach item=article from=$index.list2.data}
+                         <li><a href="{$article.link}" class="pro"><img src="{$article.image}"/> </a>
+                         <h3 class="title"><div class="banck"></div><p>{$article.title}</p>{$article.description}</h3></li>
+          {/foreach}
+        </ul>
+        </div>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+</div>
+</section>

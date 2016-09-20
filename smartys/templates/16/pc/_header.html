@@ -1,0 +1,60 @@
+<div class="top2">
+                  <div class="logo">
+                    <a href="{$site_url}"><img src="{$logo}" alt="{$title}"/></a>
+                  </div>
+                  <div class="rightop">
+                  	<div class="search">
+                    	<form action="{$search_action}" method="GET">
+                            <input type="text" name="s" value="" class="txt1" />
+    	                    <input type="submit" class="btm1" value="搜索"  />    	
+                       </form>     
+                    </div>
+                    <div class="menu">
+                       <ul id="nav" class="nav clearfix">
+                        {$litmit = 8}
+                        {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+                            <li class="nLi" style="width:{100/($litmit+1)-1}%">
+                                <h3><a href="{$site_url}">首页</a></h3>
+                            </li>
+                            {foreach name=navs item=nav from=$navs}
+                            <li  class="fl{if $nav.current} current{/if} nLi" style="width:{100/($litmit+1)}%">
+                                    <h3><a href="{$nav.link}">{$nav.name}</a></h3>
+                                <ul class="sub clearfix">
+                                {if $nav.childmenu}
+                                    {foreach key=key item=nav_list from=$nav.childmenu}
+                                    <li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                                    {/foreach}
+                                    {/if}
+                                </ul>
+                            </li>
+                            {if $nav@index+1 gte $litmit}{break}{/if}
+                          {/foreach}
+                                          
+		              </ul>               
+                    </div>
+                  </div>
+                  <div class="datub">
+                    <div id="slideBoxb" class="slideBoxb">
+                        <div class="datbg">
+                          <img src="{$site_url}images/bannbg2.png" />
+                        </div>
+                        <div class="hd">
+                            <ul>
+                            {foreach name=slidepicsb item=slidepic from=$global.slidepicsb}
+                             <li>{$slidepic@index+1}</li>
+                               {/foreach}                            
+                            </ul>
+                        </div>
+                        <div class="bd">
+                            <ul>
+                                 {foreach name=slidepicsb item=slidepic from=$global.slidepicsb}
+                                  <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>                            
+                                 {/foreach}                                
+                            </ul>                           
+                        </div>
+                        <a class="prev" href="javascript:void(0)"></a>
+                        <a class="next" href="javascript:void(0)"></a>
+		             </div>                  	
+                  </div>
+                </div>
+            

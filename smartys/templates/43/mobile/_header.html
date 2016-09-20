@@ -1,0 +1,23 @@
+ <header class="header">
+   <div class="logo">
+     <img src="{$logo}" width="100%"></div>
+   <div class="header_menu " id="header_menu"></div>
+ </header>
+ <div class="baner">
+   <div id="slideBox" class="slideBox">
+     <div class="hd">
+       <ul></ul>
+     </div>
+     <div class="bd">
+       <ul>
+         {foreach name=slidepics item=slidepic from=$global.slidepics}
+         <li>
+           <a class="pic" href="{$slidepic.link}" style="{if $slidepic@index+1 eq 1}background:url({$site_url}images/baner.jpg){/if}">
+             <img src="{$slidepic.image}" title="638*484" /> 
+           </a>
+         </li>
+         {/foreach}
+       </ul>
+     </div>
+   </div>
+ </div>

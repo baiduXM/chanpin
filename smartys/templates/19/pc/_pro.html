@@ -1,0 +1,10 @@
+<section>
+<ul>
+              {foreach item=article from=$list.data}
+  <li><a href="{$article.link}" class="img"><img src="{$article.image}" height="148" width="162" class="img"/></a><a href="{$article.link}" class="tit">{$article.title}</a>
+                            
+                        </li>
+                         {if $article@index+1 ==12}{break}{/if}
+  {/foreach}
+            </ul>
+            </section>

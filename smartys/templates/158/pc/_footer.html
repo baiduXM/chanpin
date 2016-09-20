@@ -1,0 +1,36 @@
+    <div class="footbg">
+       <div class="middtop">
+           <div class="topaer">
+               <a href="javascript:goTop();"><img src="{$site_url}images/topip.png" /></a>
+           </div>
+      </div>
+      <div class="fon_top">
+        <div class="mif_footer">
+          <div class="telnum">
+              <img src="{$site_url}images/fobimg1.jpg" height="89" width="45" />
+              <span><b>服务热线：</b>{$contact.mobile}</span>
+          </div>
+          <div class="qqimg">                
+              {foreach name=QQ item=QQ from=$global.QQ}
+                   <a target="_blank" href="http://wpa.qq.com/msgrd?V=3&amp;uin={$QQ.title}&amp;Site=QQ客服&amp;Menu=yes"><img border="0" src="{$QQ.image}"></a>
+              {/foreach}    
+                              
+          </div>
+          <div class="address">
+              {$global.contactusfoot}
+          </div>
+       </div>
+      </div>
+        <div class="fotdibu">
+             <a href="{$site_url}">首页</a> |
+            {foreach name=navs item=nav from=$navs}
+                <a href="{$nav.link}" >{$nav.name}</a> |
+            {/foreach}   <br />
+            友情链接:
+           {foreach key=key item=link from=$global.links}
+            <a href="{$link.link}">{$link.title}</a>
+            {/foreach}<br />            
+         {$footprint}                             
+        </div>
+       </div>        
+    {$footscript}       

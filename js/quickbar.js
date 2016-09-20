@@ -2,14 +2,14 @@
 window.CustomerID = 0;
 window.CustomerTYPE = 'pc';
 window.configQuickbar = {
-	dataurl : 'http://chanpin.xm12t.com.cn/json/quickbar.json',
-	langurl : 'http://chanpin.xm12t.com.cn/json/quickbar-lang.json',
+	dataurl : 'http://swap.5067.org/json/quickbar.json',
+	langurl : 'http://swap.5067.org/json/quickbar-lang.json',
 	viewcounturl : 'http://swap.5067.org/Viewcount/0000/pc.html',
 	fonts : {
-		eot : 'http://chanpin.xm12t.com.cn/fonts/iconfont.eot',
-		woff : 'http://chanpin.xm12t.com.cn/fonts/iconfont.woff',
-		ttf : 'http://chanpin.xm12t.com.cn/fonts/iconfont.ttf',
-		svg : 'http://chanpin.xm12t.com.cn/fonts/iconfont.svg'
+		eot : 'http://swap.5067.org/fonts/iconfont.eot',
+		woff : 'http://swap.5067.org/fonts/iconfont.woff',
+		ttf : 'http://swap.5067.org/fonts/iconfont.ttf',
+		svg : 'http://swap.5067.org/fonts/iconfont.svg'
 	}
 };
 
@@ -96,7 +96,7 @@ window.quickbarCallback = function(dataQuickbar) {
 	// 根据不同type载入不同quickbar
 	var quickbarMain = document.createElement('script');
 	quickbarMain.setAttribute('type', 'text/javascript');
-	quickbarMain.setAttribute('src', 'http://chanpin.xm12t.com.cn/js/quickbar-' + dataQuickbar.config.type + '.js');
+	quickbarMain.setAttribute('src', 'http://swap.5067.org/js/quickbar-' + dataQuickbar.config.type + '.js');
 	(document.head || document.getElementsByTagName('head')[0]).appendChild(quickbarMain);
 };
 var jsData = document.createElement('script'),

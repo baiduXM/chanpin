@@ -1,0 +1,33 @@
+<header class="public-bg1">
+      	<div class="logo1"><img src="{$logo}" width="100%"></div>
+        <div class="menu public-bg2">
+            	<div class="nav">
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><span><a href="{$site_url}">网站首页</a></span></div>
+					  {foreach name=key item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}">{$nav.name}</a></span></div>
+                      {/foreach}
+                  </div>
+				</div>
+                </div></div>
+            <div class="baner">
+	<div id="slideBox" class="slideBox1">
+    <div class="hd">
+            <ul></ul>
+      </div>
+      <span class="next">&gt;</span>
+      <span class="prev">&lt;</span>
+	<div class="bd">
+		<ul>
+			{foreach name=slidepics item=slidepic from=$global.slidepics}
+			<li><a class="pic" href="{$slidepic.link}"><img src="{$slidepic.image}" /></a></li>
+			{/foreach}
+		</ul>
+	</div>
+			</div>
+			
+   </div>    
+    </header>

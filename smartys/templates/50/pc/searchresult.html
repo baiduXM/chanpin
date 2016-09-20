@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script type="text/javascript">
+  // 跳转手机页面
+  {if $site_another_url}
+    if (!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+      location.href = '{$site_another_url}';
+    }
+  {/if}
+  </script>
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<link href="{$site_url}css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="{$site_url}js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="{$site_url}js/jquery.SuperSlide.2.1.js"></script>
+
+<script type="text/javascript" src="http://common.mn.sina.com.cn/public/resource/lib/jquery.jcarousellite.js"></script>
+<script type="text/javascript" src="{$site_url}js/function.js"></script>
+<title>{$title}</title>
+
+	</head>
+	<body>		
+		<!-- 头部 -->
+		{include file="./_header.html"}
+		<!-- 最新产品 -->
+        <div class="containers">
+			<div class="left">
+            	<div class="fenlei">
+                	<div class="list">
+            <div class="list">
+{include file="./_pagenavs_sub3.html"}
+                    </div>                     
+                    </div>
+                </div>
+                <div class="lxfs">
+                	<div class="lxfs_title">联系我们 <b>Contact us</b></div>
+                    <div class="conbg">
+                      <div class="tela">
+{$global.contactus}           
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rights">
+<div class="detal_s">
+                   <div class="atitle2"><span>
+<ul class="clearfix">
+	<li class="fl"><a href="{$site_url}">首页</a></li>
+	{foreach item=nav from=$posnavs}
+	<li class="fl"> >> <a href="{$nav.link}">{$nav.name}</a></li>
+	{/foreach}
+</ul>                   
+                   </span>{$list.name}</div>		 
+<div class="deteo">
+            <div class="about_edit">
+  {if $search.total eq 0}
+                    <p class="search_res">没有查找到相关数据！</p>
+                    {else}
+  <p>搜索关键词为“<span>{$search.keyword}</span>”的产品/文章，共搜索到{$search.total}个结果：</p>       
+    <ul class="news_lista">
+    	{foreach item=article from=$search.data}
+<li><a href="{$article.link}"><span class="date"><time class="fr" datetime="{$article.pubdate}" pubdate="pubdate">{$article.pubdate}</time></span>{$article.title}</a></li>       
+    	{/foreach}
+    </ul> 
+                                    		
+                                            
+                                              <div class="module_page">
+                第{$page_links.current_page}页/共{$page_links.page_count} 页      
+              <a href="{$page_links.prev_link}">&laquo; 上一页</a>
+              {foreach item=near_link key=near_page from=$page_links.nears_link}
+                {if $near_page == $page_links.current_page}
+                  <a class="current">{$near_page}</a></li>
+                {else}
+                  <a href="{$near_link}">{$near_page}</a></li>
+                {/if}
+              {/foreach}
+
+
+              <a href="{$page_links.next_link}">下一页 &raquo;</a>
+                    
+					</div> 
+                    {/if}                                      
+              </div>
+             
+                        </div>
+                    </div>                	
+                   
+                </div>            
+        </div>        
+		<!-- 热门产品 -->
+
+		<!-- 底部 -->
+		{include file="./_footer.html"}
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<header>
+    <div class="border w"></div>
+    <div class="head">
+        <h2 class="logo f_l">
+          <a href="{$site_url}">
+            <img src="{$logo}" height="128" max-width="387" class="logoimg"/>
+          </a>
+        </h2>
+       <div class="header_menu f_r">
+            <ul class="nav clearfix" id="nav">
+                {$limit = 5}
+                <li class="nLi" style="width: {100/($limit+1)}%"><h3><a href="{$site_url}">网站首页</a></h3>
+                </li>
+                  {foreach item=nav from=$navs}
+                    <li class="nLi {if $nav.current}current{/if}" style="width: {100/($limit+1)}%">
+                      <h3><a href="{$nav.link}">{$nav.name}</a></h3>
+                     
+                      {if $nav.childmenu}
+                        <ul class="sub">
+                          {foreach item=nav_list from=$nav.childmenu}
+                          <li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                          {/foreach}
+                        </ul>
+                      {/if}
+                    </li>
+                    {if $nav@index+1 gte $limit}{break}{/if}
+                  {/foreach}
+                       
+              </ul>
+        </div>
+    </div>
+  
+    <div id="slideBox" class="slideBox w p_r">
+        <div class="hd">
+            <ul>
+                {foreach item=slidepic from=$_header.slidepics}
+                    <li>{$slidepic@index+1}</li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+               {foreach item=slidepic from=$_header.slidepics}
+                        <li><a href="{$slidepic.link}"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>
+               {/foreach}
+            </ul>
+        </div>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+            <div class="ssk p_r w">
+            <div class="txtScroll-left">
+                <div class="bd">
+                    <ul class="infoList">
+                       {foreach item=article from=$_header.roll.data}
+                            <li><a class="ellipsis" href="{$article.link}">{$article.title}</a></li>
+                        
+                      {/foreach}
+                    </ul>
+                </div>
+            </div>      
+            <form action="{$search_action}" method="GET" class="hides f_r ">
+                 <input type="text" placeholder="请输入搜索关键词" class="input_case" name="s">
+                 <input type="submit" value="搜索" class="input_key">
+            </form>
+        </div>
+
+</header>

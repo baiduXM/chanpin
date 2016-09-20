@@ -1,0 +1,20 @@
+ <header class="header">
+   <div class="logo">
+     <img src="{$logo}" width="100%"></div>
+   <div class="header_menu" id="quickbar-showcats"></div>
+ </header>
+ <div class="menu">
+ <a class="arrow-left" href="#">&lt;</a> 
+       <a class="arrow-right" href="#">&gt;</a>
+    <div class="nav">
+     <div class="swiper-nav swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><span><a href="{$site_url}">网站首页</a></span></div>
+        {foreach item=nav_list from=$navs}
+        {* 仅输出类型为 5内容单页 和 外链的栏目（包括5留言板、7微信、8直达号功能） *}
+        <div class="swiper-slide {if $nav_list.current}current{/if}"><span><a href="{$nav_list.link}">{$nav_list.name}</a></span></div>
+        {/foreach}
+      </div>
+    </div>
+    </div>
+  </div>

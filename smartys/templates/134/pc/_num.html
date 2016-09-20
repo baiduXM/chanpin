@@ -1,0 +1,13 @@
+
+               
+                <a href="{$page_links.first_link}">[第一页]</a>
+                <a href="{$page_links.prev_link}">[上一页]</a>
+                {foreach name=nears_link item=near_link key=near_page from=$page_links.nears_link}
+                {if $near_page == $page_links.current_page}
+                    <a class="cur">{$near_page}</a>
+                {else}
+                    <a href="{$near_link}">{$near_page}</a>
+                {/if}
+                {/foreach}
+                <a href="{$page_links.next_link}">[下一页]</a>
+                <a href="{$page_links.last_link}">[最后页]</a>

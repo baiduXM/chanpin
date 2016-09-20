@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<script type="text/javascript">
+	// 跳转手机页面
+	{if $site_another_url}
+	if (!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+	    location.href = '{$site_another_url}';
+	} {/if}
+</script>
+
+<title>{$title}</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<link rel="stylesheet" href="{$site_url}css/globle.css">
+<link rel="stylesheet" href="{$site_url}css/main.css">
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="css/ie.css">
+<![endif]-->
+
+<script type="text/javascript" src="{$site_url}js/jquery-1.7.1.min.js"></script>
+<script src='{$site_url}js/pagenavs_sub3.js'></script>
+<script type="text/javascript" src="{$site_url}js/tap.js"></script>
+</head>
+<body>
+	<div class="wrap case">
+		{include file='./_header.html'} 
+
+		<div class="main">
+			<div class="top group">
+				<div class="title">{if $pagenavs}
+					<h2>{$posnavs[0].en_name}<span class="orange">{$posnavs[0].name}</span></h2>
+					{else}
+					
+					<h2>{$_pagenavs_sub3.pagenavs.en_name}<span class="orange">{$_pagenavs_sub3.pagenavs.name}</span></h2>
+					{/if}
+				</div>
+
+				<div class="position"><i class="iconfont">&#xe616;</i><p>您当前所在所在位置：<a href="index.html">网站首页</a>&gt;<a href="javascript:;">关于我们</a></p></div>
+			</div>
+			<div class="con">
+				{if $search.total eq 0}
+                <p class="search_mss">没有查找到相关数据！</p>
+                {else} 
+				<div class="search_mss">
+					<p>以下是您输入的关键字“{$search.keyword}”，搜索结果有<span>{$search.total}</span>条</p>
+				</div>
+				
+				{foreach name=article item=article from=$search.data}
+				<div class="news1_row">
+					<div class="news1_con">
+						<h4><a href="{$article.link}">{$article.title}</a></h4>
+						<span>[{$article.pubdate}]</span>
+						<p>{$article.description}</p>
+					</div>
+				</div>
+				{/foreach}
+				{/if}
+
+				<!-- page[分页] -->
+				{include file='./_page_normal.html'} 
+				
+			</div>
+			{include file='./_pagenavs_sub3.html'} 		
+		</div>	
+
+		{include file='./_footer.html'}
+	</div>
+</body>
+</html>

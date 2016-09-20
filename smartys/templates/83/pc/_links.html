@@ -1,0 +1,4 @@
+
+	{foreach key=key item=link from=$_links.links}
+	<a href="{$link.link}" target="_blank">{$link.title}</a> |
+	{/foreach}

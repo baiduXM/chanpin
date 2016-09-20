@@ -1,0 +1,48 @@
+  <div class="top_l">
+    <div class="header_inner">
+       <div class="top">
+        <h1 class="logo"><a href="{$site_url}"><img src="{$logo}" alt="{$title}" /></a></h1>
+      </div>    
+      
+       <div class="nav">
+       <ul>
+    {foreach item=nav from=$navs}
+    <li class="nav1 {if $nav.current}current{/if}"><a href="{$nav.link}">{$nav.name}</a>
+	<span class="hoverview">
+		<ul>
+		  {if $nav.childmenu} {foreach item=nav_list from=$nav.childmenu}
+		  <li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+          {/foreach} {/if}
+          
+		</ul>
+	</span>
+		  </li>
+{if $nav@index+1 eq 7}{break}{/if}
+{/foreach}
+  </ul>
+      </div>
+      
+      <div class="ser_zt">
+    <div class="ser clearfix">
+       <form action="{$search_action}" method="GET">
+                <input type="text" name="s" value="" class="sa" />
+                <input type="submit" class="bta" />
+            </form>
+    </div>
+  </div>
+   
+</div>
+
+
+
+ </div>
+ 
+ 
+<div id="banner">
+<!--100%-->
+  <div class="banner_box">
+    <div id="kinMaxShow" style="display:none;"> {foreach name=slidepics item=slidepic from=$global.slidepics}
+      <div> <a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}"  /></a></div>
+      {/foreach} </div>
+  </div>
+</div>

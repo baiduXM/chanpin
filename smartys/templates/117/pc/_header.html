@@ -1,0 +1,42 @@
+  <div class="public header">
+            	<div class="logo fl">
+                	<a href="{$site_url}"><img src="{$logo}" alt="{$title}"/></a>
+                </div>
+                <div class="righthome fr">
+                	<div class="search fr">
+                     <form action="{$search_action}" method="GET">
+                    <span>全站搜索:</span><input type="text" name="s" value="" class="txta" /><input type="submit" class="bta" value="搜索" />     	
+                        </form>                    
+                    
+                    	
+                    </div>                    
+                </div>
+            </div>
+<div class="public menu">
+<ul id="nav" class="nav clearfix">
+        {$litmit = 8}
+        {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+			<li class="nLi" style="width:{100/($litmit+1)-1}%">
+            	<h3><a href="{$site_url}">首页</a></h3>
+			</li>
+            {foreach name=navs item=nav from=$navs}
+			<li  class="fl{if $nav.current} current{/if} nLi" style="width:{100/($litmit+1)}%">
+					<h3><a href="{$nav.link}">{$nav.name}</a></h3>
+				<ul class="sub clearfix">
+                {if $nav.childmenu}
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+					{/foreach}
+                    {/if}
+				</ul>
+			</li>
+			{if $nav@index+1 gte $litmit}{break}{/if}
+          {/foreach}
+                                          
+		</ul>
+                    </div>      
+                    
+
+
+
+

@@ -1,0 +1,10 @@
+ {if $search.total eq 0}
+                    <p class="search_res">没有查找到相关数据！</p>
+                    {else}
+           <p class="t">搜索关键词为“<span>{$search.keyword}</span>”的产品/文章，共搜索到{$search.total}个结果：</p>
+           <ul class="module_news">
+              {foreach item=article from=$search.data}
+              <li><a href="{$article.link}">{$article.title}<span class="fr" datetime="{$article.pubdate}" pubdate="pubdate">{$article.pubdate}</span></a></li>
+              {/foreach}
+            </ul>
+            {/if}

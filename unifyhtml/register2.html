@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml"class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<title>注册</title>
+<script type="text/javascript">
+$.validator.setDefaults({
+    submitHandler: function() {
+      alert("提交事件!");
+    }
+});
+$(document).ready(function(){
+$().ready(function() {
+	$("#register_info").validate({
+		rules: {
+		  username: {
+			required: true,
+			minlength: 6,
+			maxlength:18
+		  },
+		  password: {
+			required: true,
+			minlength: 5
+		  },
+		  mail: {
+			required: true,
+			email: true
+		  }
+		},
+		messages: {
+		  username: {
+			required: "请输入用户名",
+			minlength: "用户名长度6-18",
+			maxlength:"用户名长度6-18"
+		  },
+		  password: {
+			required: "请输入密码",
+			minlength: "密码长度不能小于 5 个字母"
+		  },
+		  mail: "请输入一个正确的邮箱"
+		}
+	});
+});
+	function changing(){
+		 document.getElementById('checkpic').src="http://swap.5067.org/admin/verification.php?"+Math.random();
+	 };
+	$.fn.stringify = function() {
+	  return JSON.stringify(this);
+	}
+	$("#register").click(function(){
+		//datavalidate();
+		var username=$('#username').val();
+		var password=$('#password').val();
+		var mail=$('#mail').val();
+		var verification=$('#verification').val();
+		var cus_id=$('#cus_id').val();
+		var data={username:username,password:password,mail:mail,verification:verification,cus_id:cus_id};
+		//$(data).stringify();
+		$.ajax({
+			url:"http://swap.5067.org/admin/register.php",
+			type:'POST',
+			data:data,
+			success:function(json){
+				//console.log(json);
+				var data=eval("("+json+")");
+				alert(data.msg);
+				changing();
+				/*if(data.err==0){
+					alert(data.msg);
+				}else if(data.err==2){
+					alert(data.msg)
+				}
+				console.log(data.msg);*/
+			}
+		});
+	});
+});
+</script>
+<style>
+li {
+	list-style:none;
+	margin: 10px auto;
+}
+</style>
+</head>
+<body>
+<div id="register_info">
+<ul>
+	<li><label >用户名:</label><input type="text" name="username" id="username" placeholder="用户名"><icon style="color:red;">*</icon><label class="prompt" style="display:none;">不能为空</label></li>
+	<li><label >密码:</label><input type="password" name="password" id="password" placeholder="密码长度为6-18"><icon style="color:red;">*</icon><label class="prompt" style="display:none;">不能为空</label></li>
+	<li><label >邮箱:</label><input type="email" name="mail" id="mail" placeholder="邮箱"><icon style="color:red;">*</icon><label class="prompt" style="display:none;">不能为空</label></li>
+	<li><label >验证码:</label><input type="text" name="verification" id="verification" placeholder="验证码" style="width:50px;"> <img id="checkpic" onclick='document.getElementById("checkpic").src="http://swap.5067.org/admin/verification.php?"+Math.random();' src='http://swap.5067.org/admin/verification.php' /> </li>
+	<li><input type="hidden" name="cus_id" id="cus_id" value="1"></li>
+	<li><input type="button" name="register" id="register" value="注册"></li>
+</ul>
+</div>
+</body>
+</html>

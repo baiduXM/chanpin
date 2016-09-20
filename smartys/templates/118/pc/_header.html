@@ -1,0 +1,20 @@
+<div class="nav">
+	<ul>
+		<li><a href="{$site_url}" class="home"><i class="iconfont">&#xe616;</i></a></li>
+	{$limit = 7}
+	{foreach name=navs item=nav from=$navs}
+	{if $navs|count lt $limit}{$limit = $navs|count}{/if}
+		<li class="{if $nav.current}current{/if}">
+			<a href="{$nav.link}" class="buff">{$nav.name}</a>
+			{if $nav.childmenu}
+			<ul>
+				{foreach key=key item=nav_list from=$nav.childmenu}
+				<li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+				{/foreach}
+			</ul>
+			{/if}
+		</li>
+		{if $nav@index+1 eq $limit}{break}{/if}
+	{/foreach}
+	</ul>
+</div>

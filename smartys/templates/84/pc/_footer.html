@@ -1,0 +1,23 @@
+
+
+<div class="footer_bg">
+
+  <div id="footer" class="wrapper">
+  {$footprint}
+    <div id="foot_link"><a href="{$site_url}" target="_blank">首页</a> | {foreach name=navs item=nav from=$navs}<a href="{$nav.link}">{$nav.name}</a> | {/foreach}</div>
+
+  </div>
+  
+</div>
+{$footscript}
+
+
+<!--#*
+{foreach name=navs item=nav from=$navs}
+<a href="{$nav.link}" >{$nav.name}</a> |{/foreach}
+
+<a href="index.html" target="_blank">首页</a> | {foreach name=navs item=nav from=$navs}<a href="{$nav.link}">{$nav.name}</a> | {/foreach}
+
+{$footprint}
+*#-->
+

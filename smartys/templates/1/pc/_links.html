@@ -1,0 +1,10 @@
+<select name="pageselect" onchange="self.location.href=options[selectedIndex].value" >
+ 
+ <option>友情链接</option>	
+
+	{foreach key=key item=link from=$_links.links}
+	 <option value="{$link.link}">{$link.title}</option>	
+	{/foreach}
+
+ </select>
+

@@ -1,0 +1,27 @@
+        
+<div class="foobg">
+        	<div class="zhanban">
+            	<div class="heiban">
+                	<div class="hb_title">{$contact.company}</div>
+                    <div class="rexian">服务热线<span>{$contact.mobile}</span></div>
+                </div>
+            </div>
+            <div class="zhan2">
+            <div class="footmenubg">
+            	<div class="flmenu">
+                         <a href="{$site_url}">首页</a> |
+                        {foreach name=navs item=nav from=$navs}
+                            <a href="{$nav.link}" >{$nav.name}</a> |
+                        {/foreach}           
+                </div>
+                
+            </div>
+            <div class="foword">
+                        友情链接:
+                         {foreach key=key item=link from=$global.links}
+                            <a href="{$link.link}">{$link.title}</a>
+                            {/foreach}<br />            
+              {$footprint}     
+</div>
+            </div>
+        </div>

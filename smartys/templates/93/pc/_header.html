@@ -1,0 +1,45 @@
+<div class="header">
+    <div class="public">
+      <div class="logo">
+        <a href="{$site_url}">
+          <img src="{$logo}" height="80px"></a>
+      </div>
+      <div class="search">
+        <form action="{$search_action}" method="GET">
+          <input class="searchbox" type="text" name="s" value="请输入关键字" />
+          <div class="searchbtn">
+            <input type="submit" value="" />
+          </div>
+        </form>
+      </div>
+      <div class="menu">
+        <ul class="nav">
+          <li>
+            <h3>
+              <a href="{$site_url}">网站首页</a>
+            </h3>
+          </li>
+          {foreach item=nav from=$navs}
+          <li class="nLi {if $nav.current}current{/if}">
+            <h3>
+              <a href="{$nav.link}">{$nav.name}</a>
+            </h3>
+            {if $nav.childmenu}
+            <ul class="subnav">
+              {foreach item=nav_list from=$nav.childmenu}
+              <li class="{if $nav_list.current}current{/if}">
+                <a href="{$nav_list.link}">{$nav_list.name}</a>
+              </li>
+              {/foreach}
+            </ul>
+            {/if}
+          </li>
+		  {if $nav@index+1 == 7}{break}{/if}
+          {/foreach}
+        </ul>
+      </div>
+    </div>
+  </div>
+     <div class="ny-banner">
+            <div><img src="{$global.banner.image}" height="304px"></div>
+     </div>

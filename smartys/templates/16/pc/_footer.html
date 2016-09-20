@@ -1,0 +1,18 @@
+<div class="footbg">
+            	<div class="midfooter">
+                  <div class="footer">
+                         <a href="{$site_url}">首页</a> |
+                        {foreach name=navs item=nav from=$navs}
+                            <a href="{$nav.link}" >{$nav.name}</a> |
+                        {/foreach}<br />  
+                        <ul class="links clearfix"><li  class="fl">友情链接：</li>
+                            {foreach key=key item=link from=$global.links}
+                            <li class="fl"><a href="{$link.link}">{$link.title}</a></li>
+                            {/foreach}
+                        </ul>                         
+                     <span>
+                      版权所有{$footprint} {$contact.company} {$global.contactusfoot}</span>
+                  </div>
+                </div>
+            </div>
+        {$footscript}

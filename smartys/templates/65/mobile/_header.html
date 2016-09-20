@@ -1,0 +1,41 @@
+<div class="heaer">
+  <div class="welcome public_bg2">欢迎来到{$contact.company}</div>
+  <div class="logo">
+    <img src="{$logo}" width="100%"></div>
+  <div class="public_bg1 banner_bg">
+    <div class="menu">
+      <div class="nav">
+        <div class="swiper-nav swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="{$site_url}">网站首页</a>
+            </div>
+            {foreach item=nav_list from=$navs}
+            {* 仅输出类型为 5内容单页 和 外链的栏目（包括5留言板、7微信、8直达号功能） *}
+            <div class="swiper-slide {if $nav_list.current}current{/if}">
+              <a href="{$nav_list.link}">{$nav_list.name}</a>
+            </div>
+            {/foreach}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="slideBox" class="slideBox">
+      <div class="hd">
+        <ul></ul>
+      </div>
+      <div class="bd">
+        <ul>
+          {foreach name=slidepics item=slidepic from=$global.slidepics}
+          <li>
+            <a class="pic" href="{$slidepic.link}">
+              <img src="{$slidepic.image}" />
+            </a>
+          </li>
+          {/foreach}
+        </ul>
+
+      </div>
+      <img src="{$site_url}images/banner_hr.jpg" width="100%"></div>
+  </div>
+</div>

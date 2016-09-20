@@ -1,0 +1,13 @@
+﻿        <div class="menulist">
+            	<div class="nav">
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+				  
+                      <div class="swiper-slide"><span><a href="{$site_url}" class="public_color">网站首页</a><div class="num">HOME</div></span></div>
+					  {foreach item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}" class="public_color">{$nav.name}</a><div class="num">{$nav.en_name}</div></span></div>
+                      {/foreach}
+                  </div>
+				</div>
+                </div>
+    </div>

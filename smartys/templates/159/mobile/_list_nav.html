@@ -1,0 +1,9 @@
+<nav class="pag_nav">
+<ul class="clearfix">
+  {foreach item=nav from=$pagenavs}
+  <li class="{if $nav.current}cur{/if}">
+    <a href="{$nav.link}">{$nav.name}</a>
+  </li>
+  {/foreach}
+</ul>
+</nav>

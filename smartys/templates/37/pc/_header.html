@@ -1,0 +1,47 @@
+			
+<div class="header">
+	<div class="public01">
+	<span class="logo fl h_o"><img src="{$logo}"/></span>
+	<div class='h_right fr'>
+		<ul class='navs h_o'>
+			{foreach key=key item=naver from=$global.second_navs}
+				<a href="{$naver.link}">{$naver.name}</a>|
+				{if $naver@index+1 == 3}{break}{/if}
+			{/foreach}
+		</ul>
+		 <form action="{$search_action}" method="GET">
+			<span class="search"><input type="text" class="text" name="s" /><input name="" type="submit" class="submit" />
+			</span>
+		 </form>
+	    <ul id="nav" class="nav" >
+	       {$litmit = 8}
+	        {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+	            <li class="nLi line" style="width:{100/($litmit+1)-1}%" ><a href="{$site_url}">首页</a></li>
+	        {foreach item=nav from=$navs}	
+	            <li class="nLi {if $nav.current}current{/if} line" style="width:{100/($litmit+1)-1}%"><a href="{$nav.link}">{$nav.name}</a>
+					{if $nav.childmenu}
+						<ul class="sub clearfix">
+							{foreach item=nav_list from=$nav.childmenu}
+							<li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+							{/foreach}
+						</ul>
+					{/if}
+				</li>            
+	       		{if $nav@index+1 gte $litmit}{break}{/if}
+			{/foreach}			            
+	 	</ul>
+    </div>
+    </div>
+</div>      
+<div class="banners h_o">
+		<div id="slideBox" class="slideBox h_o">
+			<div class="bd">
+				<ul>
+					{foreach name=slidepics item=slidepic from=$global.slidepics}
+						<li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}"  alt="{$slidepic.title}"/></a></li>
+					{/foreach}   
+                    
+				</ul>
+			</div>
+		</div>
+</div>   

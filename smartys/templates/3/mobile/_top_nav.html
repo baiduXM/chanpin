@@ -1,0 +1,18 @@
+<div class="top_nav">
+  <h2><span class="en">{$list.en_name}</span><span class="zh">{$list.name}</span></h2>
+  <a class="classify_btn" href="javascript:;">分类</a>
+  
+  <nav>
+    <ul class="nav up">
+      {foreach name=pagenavs item=nav from=$pagenavs}
+        <li><a href="{$nav.link}">{$nav.name}</a></li>
+      {/foreach}
+    </ul>
+  </nav>
+  <a class="font_btn left" href="javascript:;">字</a>
+  <div class="font left">
+    <span class="big">大</span>
+    <span class="normal">中</span>
+    <span class="small">小</span>
+  </div>             
+</div>

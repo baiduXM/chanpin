@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=7" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+        <title>登陆</title>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#login_info").validate({
+                    rules: {
+                        username: {
+                            required: true
+                        },
+                        password: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        username: {
+                            required: "请输入用户名"
+                        },
+                        password: {
+                            required: "请输入密码"
+                        }
+                    },
+                    submitHandler: function () {
+                        var username = $('#username').val();
+                        var password = $('#password').val();
+                        var verification = $('#verification').val();
+                        var cus_id = $('#cus_id').val();
+                        var data = {username: username, password: password, verification: verification, cus_id: cus_id};
+                        $.ajax({
+                            url: "http://swap.5067.org/admin/login.php",
+                            type: 'POST',
+                            data: data,
+                            success: function (json) {
+                                var data = eval("(" + json + ")");
+                                alert(data.msg);
+                                changing();
+                            }
+                        });
+                    }
+                });
+                $("#verification").change(function () {
+                    var verification = $('#verification').val();
+                    var cus_id = $('#cus_id').val();
+                    var data = {verification: verification};
+                    $.ajax({
+                        url: "http://swap.5067.org/admin/login.php?verification=" + verification,
+                        type: 'GET',
+                        success: function (data) {
+                            if (data == 0) {
+                                changing();
+                                alert("验证码错误");
+                            }
+                        }
+                    });
+                });
+                function changing() {
+                    document.getElementById('checkpic').src = "http://swap.5067.org/admin/verification.php?" + Math.random();
+                }
+                ;
+            });
+        </script>
+        <style>
+            li {
+                list-style:none;
+                margin: 10px auto;
+            }
+            li img{
+                height: 20px;
+                margin-bottom: -5px;
+            }
+            #login_info{ width: 400px; margin:0 auto; background: #ffffff; padding: 20px; overflow: hidden; box-shadow: 2px 2px 20px #dddddd;}
+            .li4{ width: 60px; display: inline-block; float:left;}
+            label{ padding-right: 6px;}
+            div{width:60px;display:inline;}
+        </style>
+    </head>
+    <body>
+        <div>
+            <form  id="login_info" action="../admin/login.php" method="get">
+                <ul>
+                    <li><label >用户名：</label><input type="text" name="username" id="username" placeholder="用户名"><icon style="color:red;">*</icon></li>
+                    <li><label >密　码：</label><input type="password" name="password" id="password" placeholder="密码长度为6-18"><icon style="color:red;">*</icon></li>
+                    <li><label >验证码：</label><input type="text" name="verification" id="verification" placeholder="验证码" style="width:50px;"> 
+                            <img id="checkpic" onclick='document.getElementById("checkpic").src = "http://swap.5067.org/admin/verification.php?" + Math.random();' src='http://swap.5067.org/admin/verification.php' /> 
+                    </li>
+                    <li><input type="hidden" name="cus_id" id="cus_id" value="1"></li>
+                    <li class="li4"><input type="submit" name="login" id="login" value="登陆"></li>
+                    <li class="li4"><input type="button" name="cancel" id="cancel" value="取消"></li>
+                </ul>
+            </form>
+        </div>
+    </body>
+</html>

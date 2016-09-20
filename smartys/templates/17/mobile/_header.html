@@ -1,0 +1,38 @@
+ <header class="header">
+   <div class="logo">
+     <img src="{$logo}" width="100%"></div>
+   <img src='{$site_url}icon/6.png' class='slide-nav' id="quickbar-showcats"/>
+ </header>
+ <div class="baner">
+   <div id="slideBox" class="slideBox">
+     <div class="hd">
+       <ul></ul>
+     </div>
+     <div class="bd">
+       <ul>
+         {foreach name=slidepics item=slidepic from=$global.slidepics}
+         <li>
+           <a href="{$slidepic.link}">
+             <img src="{$slidepic.image}"/> 
+           </a>
+         </li>
+         {/foreach}
+       </ul>
+     </div>
+   </div>
+ </div>
+<div class="caption">
+  <div class="swiper-caption">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide">
+        <a href='{$site_url}'>网站首页</a>
+      </li>
+      {foreach item=nav_list from=$navs}
+      {* 仅输出类型为 5内容单页 和 外链的栏目（包括5留言板、7微信、8直达号功能） *}
+      <li class="swiper-slide ">
+        <a class="{if $nav_list.current}current{/if} " href='{$nav_list.link}'>{$nav_list.name}</a>
+      </li>
+      {/foreach}
+    </ul>
+  </div>
+</div>

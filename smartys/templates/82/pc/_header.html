@@ -1,0 +1,73 @@
+<div class="topbu">
+        	<div class="header">
+            	<div class="logo fl"><a href="{$site_url}"><img src="{$logo}" alt="{$title}" /></a></div>
+                <div class="right_top fr">
+                	<div class="search fr">                    	
+                            <form action="{$search_action}" method="GET">
+                            <input type="text" name="s" value="" class="txta" />
+    	<input type="submit" class="bta" />
+    	
+    </form>
+                    </div>
+                    <div class="menu">
+<ul id="nav" class="nav clearfix">
+        {$litmit = 8}
+        {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+			<li class="nLi" style="width:{100/($litmit+1)-1}%">
+            	<h3><a href="{$site_url}">首页</a></h3>
+			</li>
+            {foreach name=navs item=nav from=$navs}
+			<li  class="fl{if $nav.current} current{/if} nLi" style="width:{100/($litmit+1)}%">
+					<h3><a href="{$nav.link}">{$nav.name}</a></h3>
+				<ul class="sub clearfix">
+                {if $nav.childmenu}
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+					{/foreach}
+                    {/if}
+				</ul>
+			</li>
+			{if $nav@index+1 gte $litmit}{break}{/if}
+          {/foreach}
+                                          
+		</ul>
+                    </div>
+                </div>
+            </div>
+<div class="datu">
+        <div class="baners">
+        <div class="focusBox" style="margin:0 auto">
+                    <ul class="pic">
+                  {foreach name=slidepics item=slidepic from=$global.slidepics}
+                      <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>
+                    
+                    {/foreach}       
+        
+                    </ul>
+                    <a class="prev" href="javascript:void(0)"></a>
+                    <a class="next" href="javascript:void(0)"></a>
+                    <ul class="hd">
+                {foreach name=slidepics item=slidepic from=$global.slidepics}
+                 <li>{$slidepic@index+1}</li>
+                   {/foreach}
+                    </ul>
+            </div>            
+                    
+                    </div>
+        </div>
+        <div class="kjdh">
+        	<div class="tel">
+            	<a href="{$global.telnum.link}"><img src="{$site_url}images/telnum.png" height="41" width="66" /></a>
+            </div>
+            <div class="rig_menu fr">
+            	<ul>
+
+		        <li style="margin-top:8px;"><a href="{$global.list1.link}">{$global.list1.name}</a></li>                                 
+		        <li><a href="{$global.list2.link}">{$global.list2.name}</a></li>                                 
+		        <li><a href="{$global.list3.link}">{$global.list3.name}</a></li>                                 
+                </ul>
+            </div>
+        </div>
+        <div class="dibanner"><img src="{$site_url}images/banbgb.png" height="106" width="1920" /></div>            
+        </div>
+            

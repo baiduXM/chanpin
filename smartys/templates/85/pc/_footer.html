@@ -1,0 +1,14 @@
+    <div class="foot">
+        <div class="footer">
+            {$footprint}
+            <div class="footnav">
+
+				{foreach item=nav from=$global.second_navs}
+				    <a href="{$nav.link}">{$nav.name}</a> |
+				    
+				{/foreach}
+
+            </div>
+        </div>
+    </div>
+{$footscript}    

@@ -1,0 +1,66 @@
+
+li{
+    list-style-type:none;
+}
+
+/*项目列表加样式*/
+.list-item{
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 5px 10px;
+    text-align: left;
+}
+.list-item .content-l{	
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.list-item span.option-item{
+    margin-right: 30px;
+    font-size: 12px;
+    min-height: 20px;
+    line-height: 20px;
+    display: inline-block;
+}
+.list-item p.option-item{
+    margin-right: 30px;
+    font-size: 12px;
+    min-height: 20px;
+    line-height: 20px;
+}
+.list-item .content-d{
+    color: #999;
+    font-size: 9px;
+}
+
+
+/*===前端表单样式，前缀fv（form-view）===*/
+.fv-add-show{background: none;width:70%;}
+.adv-add-show{background: white;max-height: 500px; overflow-x: hidden; overflow-y: auto;}
+/*title*/
+.fv-as-title{ text-align: center; line-height: 22px;}
+.fv-as-title{ padding-top: 20px; font-weight: bold; font-size: 20px;}
+.fv-as-description{ padding: 20px 0;font-size:14px;}
+.fv-as-description p{text-indent: 2em;line-height:20px;}
+
+/*main*/
+.fv-unit-preview{ margin:0 auto; padding:1% 4%; max-width: 600px;}/* min-width: 320px;*/
+.adv-unit-preview{width:100%;}
+
+.fv-element-show{ padding-bottom:3%;}
+.fv-element-show p{ width: 100%; line-height: 30px; font-size:16px; font-weight: bold; padding-top: 6px;}
+
+.fv-element-show input[type="text"],.fv-element-show input[type="password"],.fv-element-show input[type="email"],.fv-element-show input[type="number"]{
+	width:100%;height: 26px; line-height: 26px; border:1px solid #cccccc; border-radius: 5px;
+}
+.fv-element-show textarea{ width:100%;height:80px; border:1px solid #cccccc;}
+
+.fv-option-item{ margin-right:6px;}
+
+/*提交、重置按钮*/
+.button{ width: 70px; height: 30px; line-height: 15px; margin: 5px 10px;text-align: center; vertical-align: middle;}
+
+.article_con .about p{text-indent: 0;}
+

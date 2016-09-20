@@ -1,0 +1,15 @@
+<div class="menu" >
+            	<div class="nav"> 
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                       <div class="swiper-slide"><div class="text"><a href="{$site_url}"><div class="pic"><img src="{$site_url}images/home.png"></div><span>网站首页</span></a></div></div> 
+                       {foreach name=key item=nav from=$navs}
+					   <div class="swiper-slide"><div class="text"><a href="{$nav.link}"><div class="pic">{$nav.icon}</div><span>{$nav.name}</span></a></div></div>
+                      {/foreach}
+					  
+                  </div>
+				</div>
+                </div>
+    </div>

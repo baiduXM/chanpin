@@ -1,0 +1,43 @@
+<div class="class page-prev">
+  <h2 class="class-top">
+    <!-- <span class="class-close">×</span> -->
+    快捷导航
+  </h2>
+  <nav>
+  <div class="nav">
+  <ul class="mtree">
+    <li><a href="{$site_url}">首 页</a></li>
+    {foreach name=nav item=nav from=$navs}
+      <li  class="{if $nav.childmenu}{/if}"><a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+      {if $nav.childmenu}
+          <ul>
+            {foreach key=key item=nav_list from=$nav.childmenu}
+              <li class="{if $nav_list.childmenu}{/if}"><a href="{if $nav_list.childmenu}javascript:;{else}{$nav_list.link}{/if}">{$nav_list.name}</a>
+               {if $nav_list.childmenu}
+                  <ul>
+                    {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+                    <li>
+                      <a href="{$nav_listsec.link}">{$nav_listsec.name}</a>
+                      {if $nav_listsec.childmenu}
+                      <ul>
+                        {foreach key=key item=nav_listht from=$nav_listsec.childmenu}
+                        <li><a href="{$nav_listht.link}">{$nav_listht.name}</a></li>
+                        {/foreach}
+                      </ul> 
+                     {/if}   
+
+
+                    </li>
+                    {/foreach}
+                  </ul> 
+                 {/if}                                             
+              </li>
+            {/foreach}
+          </ul>
+          {/if}                            
+      </li>
+      {/foreach}          
+  </ul>
+  </div>
+  </nav>
+</div>

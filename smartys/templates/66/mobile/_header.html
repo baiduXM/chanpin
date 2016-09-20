@@ -1,0 +1,14 @@
+<div class="menu public-bg1">
+            	<div class="nav">
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><span><a href="{$site_url}" class="public-color2">网站首页</a></span></div>
+					  {foreach name=key item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}" class="public-color2">{$nav.name}</a></span></div>
+					  {/foreach}
+                  
+                  </div>
+				</div>
+                </div></div>  

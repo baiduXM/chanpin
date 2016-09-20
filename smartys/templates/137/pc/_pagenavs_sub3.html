@@ -1,0 +1,58 @@
+<div class="side">
+	
+{if $pagenavs}
+<nav>
+<ul class="mtree">
+	{foreach name=pagenavs item=nav from=$pagenavs}
+    <li  class="{if $nav.current}mtree-open{/if} {if $nav.selected}selected{/if}"><a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+    {if $nav.childmenu}
+        <ul>
+          {foreach key=key item=nav_list from=$nav.childmenu}
+            <li class="{if $nav_list.current}mtree-open{/if} {if $nav_list.selected}selected{/if}"><a href="{if $nav_list.childmenu}javascript:;{else}{$nav_list.link}{/if}">{$nav_list.name}</a>
+             {if $nav_list.childmenu}
+                <ul>
+                  {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+                  <li class="{if $nav_listsec.current}mtree-open{/if} {if $nav_listsec.selected}selected{/if}"><a href="{$nav_listsec.link}">{$nav_listsec.name}</a></li>
+                  {/foreach}
+                </ul> 
+               {/if}                                             
+            </li>
+          {/foreach}
+        </ul>
+        {/if}                            
+    </li>
+    {/foreach}					
+</ul>
+</nav>
+{else}	<!-- 让客服自己选择，如果当前无子栏目 展现的目标栏目 -->
+<nav>
+	<!-- $_pagenavs_sub3.pagenavs.childmenu -->
+	<ul class="mtree">
+		{foreach name=pagenavs2 item=nav from=$_pagenavs_sub3.pagenavs.childmenu}
+		<li  class="{if $nav.current}mtree-open{/if} {if $nav.selected}selected{/if}"><a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+    {if $nav.childmenu}
+	        <ul>
+	          {foreach key=key item=nav_list from=$nav.childmenu}
+	            <li class="{if $nav_list.current}mtree-open{/if} {if $nav_list.selected}selected{/if}"><a href="{if $nav_list.childmenu}javascript:;{else}{$nav_list.link}{/if}">{$nav_list.name}</a>
+	             {if $nav_list.childmenu}
+	                <ul>
+	                  {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+	                  <li class="{if $nav_listsec.current}mtree-open{/if} {if $nav_listsec.selected}selected{/if}"><a href="{$nav_listsec.link}">{$nav_listsec.name}</a></li>
+	                  {/foreach}
+	                </ul> 
+	               {/if}                                             
+	            </li>
+	          {/foreach}
+	        </ul>
+	        {/if}                            
+	    </li>
+		{/foreach}
+	</ul>
+</nav>
+{/if}
+
+<div class="link1">{$global.link1.icon}<h5><a href="{$global.link1.link}"><span>{$global.link1.name}</span><span>{$global.link1.en_name}</span></a></h5><a href="{$global.link1.link}" class="more"></a></div>
+<div class="link2">{$global.link2.icon}<h5><a href="{$global.link2.link}"><span>{$global.link2.name}</span><span>{$global.link2.en_name}</span></a></h5><a href="{$global.link2.link}" class="more"></a></div>
+<div class="tel">{$global.link3.icon}<div><p>TEL:<span>{$contact.telephone}</span></p><p>有什么疑问或建议请联系我们</p></div></div>
+
+</div>

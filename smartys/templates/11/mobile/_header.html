@@ -1,0 +1,11 @@
+<div class="menulist">
+            	<div class="nav">
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      {foreach name=key item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}" class="public_color"><div class="pic"><img src="{$site_url}images/pro.png"></div>{$nav.name}</a><div class="num">{$nav@index+1}</div><div class="yuan">{$nav.icon}</div></span></div>
+                  {/foreach}
+				  </div>
+				</div>
+                </div>
+    </div> 

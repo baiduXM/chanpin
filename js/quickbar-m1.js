@@ -105,6 +105,17 @@ function jqueryfunc(){
 						}
 						v.link = linkArr[1];
 					}
+				}else if (v.type == 'im') {
+					var idAttr = '';
+					if (v.data.indexOf('<{}>') >= 0) {
+						var dataArr = v.data.split("<{}>");
+						if (fixedLang=='cn') {
+							v.name = dataArr[0];
+						}else{
+							v.en_name = dataArr[0];
+						}
+						v.data = dataArr[1];
+					}
 				}else{
 					var idAttr = '';
 				}
@@ -113,11 +124,11 @@ function jqueryfunc(){
 			// 获取侧边导航数据
 			$.each(dataQuickbar.catlist, function(k,v) {
 				if(v.childmenu == null){
-					li_nav += '<li><a href="'+v.url+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>';
+					li_nav += '<li><a href="'+v.url+'" style="color:'+(dataQuickbar.config.style.textColor?dataQuickbar.config.style.textColor:"#fff")+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>';
 				}else{
 					li_nav += '<li class="menu_head">\n\
-					<dl class="qbnav-icon"><span class="qbnav-icon1" style="color:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">-</span><span class="icon2" style="color:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">+</span></dl>\n\
-					<a href="'+v.url+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>\n\
+					<dl class="qbnav-icon"><span class="qbnav-icon1" style="color:'+(dataQuickbar.config.style.textColor?dataQuickbar.config.style.textColor:"#fff")+'">-</span><span class="icon2" style="color:'+(dataQuickbar.config.style.textColor?dataQuickbar.config.style.textColor:"#fff")+'">+</span></dl>\n\
+					<a href="'+v.url+'" style="color:'+(dataQuickbar.config.style.textColor?dataQuickbar.config.style.textColor:"#fff")+'">'+(fixedLang=='cn'?v.name:v.en_name)+'</a></li>\n\
 					<li class="menu_body">';
 					!function(childmenu, deep) {
 						deep++;
@@ -165,7 +176,7 @@ function jqueryfunc(){
 				'+search_form+follow_img+'\n\
 			').wrapInner('<div class="body public-bg2">\n\
 				<div id="quickbar-navs" class="page-prev public-bg1" style="background:'+dataQuickbar.config.style.mainColor+'">\n\
-					<h1 class="quickbar-navs-top public-color1" style="'+(dataQuickbar.config.style.secondColor ? 'background:'+dataQuickbar.config.style.secondColor : '')+'"><span class="quickbar-navs-close" style="background:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">×</span>' + dataLang.quickbar.quickbarTitle[fixedLang] + '</h1>\n\
+					<h1 class="quickbar-navs-top public-color1" style="'+(dataQuickbar.config.style.secondColor ? 'background:'+dataQuickbar.config.style.secondColor : '')+';color:'+(dataQuickbar.config.style.textColor?dataQuickbar.config.style.textColor:"#fff")+'"><span class="quickbar-navs-close" style="background:'+(dataQuickbar.config.style.iconColor!=dataQuickbar.config.style.textColor ? dataQuickbar.config.style.iconColor : dataQuickbar.config.style.secondColor)+'">×</span>' + dataLang.quickbar.quickbarTitle[fixedLang] + '</h1>\n\
 					<div class="quickbar-navs-m">\n\
 						<ul class="quickbar-navs-list">\n\
 							<!--<li><a href="index.html">' + dataLang.quickbar.quickbarColumen.index[fixedLang] + '</a></li>-->\n\

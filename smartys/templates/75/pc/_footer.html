@@ -1,0 +1,30 @@
+
+    <div class="foot">
+      <div class="ftel">
+        <span>欢迎您致电咨询我们！</span><h2>{$contact.telephone}</h2>
+      </div>
+      <div class="footer">
+            {$footprint}
+        <div class="selectbox">
+          <select onchange="javascript:openLink(this)" value="--友情链接--">   
+            <option> 友情链接</option>  
+            {foreach item=flink from=$global.links} 
+             <option value="{$flink.link}">{$flink.title}</option> 
+
+            {/foreach}
+               
+          </select> 
+          <script type="text/javascript">
+             function openLink(obj) {
+                if (obj.selectedIndex != 0) {
+                  window.open(obj.options[obj.selectedIndex].value);
+                }
+              }
+          </script>  
+        </div>                  
+      </div>
+ 
+    </div>
+
+
+{$footscript}    

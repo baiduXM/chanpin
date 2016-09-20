@@ -1,0 +1,15 @@
+<div class="menu public_bg ny-menu">
+            	<div class="nav">
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="text"><a href="{$site_url}"><span>网站首页</span></a></div></div> 
+					  {foreach name=key item=nav from=$navs}
+                       <div class="swiper-slide"><div class="text"><a href="{$nav.link}"><span>{$nav.name}</span></a></div></div>
+					   {/foreach}
+                      
+                  </div>
+				</div>
+                </div>
+    </div>

@@ -1,0 +1,16 @@
+<header class="header">
+
+  <h1 class="logo"><a href="{$site_url}"><img src="{$logo}" alt="{$title}"></a></h1> 
+  <div class="company">{$contact.company}</div>
+
+  <div class="header_menu" id="header_menu"><i class="icon iconfont">&#xe603;</i></div>
+  
+  <!-- 滚轮图 -->
+    <div class="swiper_container">
+        <div class="swiper-wrapper">
+          {foreach item=slidepic from=$global.slidepics}
+            <div class="swiper-slide"><img src="{$slidepic.image}" alt="{$slidepic.title|strip_tags}"></div>
+          {/foreach} 
+        </div>
+    </div>     
+</header>

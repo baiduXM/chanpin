@@ -1,0 +1,24 @@
+
+<div class="footer">
+
+  <ul class="clearfix bottom_menu_ul">
+    <li class="bottom_menu" id="bottom_menu">
+      <a href="javascript:;">
+        <span class="icon"><i class="icon iconfont">&#xe603;</i></span>
+        <span class="title">导航</span>
+      </a>     
+    </li>
+    {foreach item=bottomnav from=$global.bottom_navs}
+      <li class="{$bottomnav.type}">
+        <a href="{$bottomnav.data}" target="_blank">
+          <span class="icon">
+            {if $bottomnav.icon}<i class="iconfont">{$bottomnav.icon}</i>{else}<img src="{$bottomnav.image}" width="30">{/if}
+          </span>
+          <span class="title">{$bottomnav.name}</span>
+        </a>     
+      </li>
+      {if $bottomnav@index eq 2}{break}{/if}
+    {/foreach}
+  </ul>
+
+</div>

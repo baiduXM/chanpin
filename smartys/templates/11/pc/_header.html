@@ -1,0 +1,65 @@
+    	<div class="header">
+           <div class="topleft">
+               <a id="animation" href="{$site_url}" title="返回首页"></a>
+           </div>  
+           <div class="search">
+                <form action="{$search_action}" method="GET">
+                  <input class="searchbox fl" type="text" name="s" value="关键字搜索" />
+                  <input class="searchbtn fl" type="submit" value="" />
+                </form>               
+           </div>
+
+           <div class="menu">
+                    <h1 class="logo"><a href="{$site_url}" title="{$title}"><img src="{$logo}" alt=""></a></h1>
+                    <nav>
+                        <ul class="clearfix">
+                            {foreach name=navs item=nav from=$navs}
+                            <li class="{if $nav@index > 2}fr{else}fl{/if}{if $nav.current} current{/if}">
+                                <a href="{$nav.link}">{$nav.name}</a>
+
+
+                            </li>
+                            {if $nav@index+1 == 6}{break}{/if}
+                            {/foreach}
+                        </ul>
+
+
+
+
+                    </nav>      
+           </div>
+
+
+
+
+
+        </div>
+
+        <div class="banner">
+            <div class="banner-shd"></div>
+            <div id="slideBox" class="slideBox">
+                <div class="hd">
+                    <ul>
+                       {foreach name=slidepics item=slidepic from=$global.slidepics}
+                        <li></li>
+                       {/foreach}
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        {foreach name=slidepics item=slidepic from=$global.slidepics}
+                              <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>       
+                        {/foreach}
+
+
+                    </ul>
+                </div>
+
+                <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+
+                <a class="prev" href="javascript:void(0)"></a>
+                <a class="next" href="javascript:void(0)"></a>
+
+
+            </div>            
+        </div>

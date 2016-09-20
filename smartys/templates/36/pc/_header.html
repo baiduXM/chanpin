@@ -1,0 +1,42 @@
+
+
+
+
+<div id="header_bar" >
+<div class="wrapper">
+<div class="search">
+
+
+  <form action="{$search_action}" method="GET">
+  <input type="text" name="s" value="" class="search_area" />
+  <input type="submit" class="search_btn"  value="搜索"/>
+</form>
+</div>
+</div>
+</div>
+<div id="banner">
+<h1><a href="{$site_url}"><img src="{$logo}" alt="{$title}" /></a></h1>
+ <div id="nav">
+   <ul class="wrapper menu1">
+    {foreach item=nav from=$navs}
+    <li class="{if $nav.current}current{/if} nav1"><a href="{$nav.link}">{$nav.name}</a>
+	<span class="hoverview">
+		<ul class="sub clearfix">
+		  {if $nav.childmenu} {foreach item=nav_list from=$nav.childmenu}
+		  <li class="{if $nav.current}current{/if} nav2"><a href="{$nav_list.link}">
+
+{$nav_list.name}</a></li>
+                  {/foreach} {/if}
+		</ul>
+	</span>
+		  </li>
+{if $nav@index+1 eq 6}{break}{/if}
+{/foreach}
+   </ul>
+ </div>
+  <div class="banner_box">
+    <div id="kinMaxShow" style="display:none;"> {foreach name=slidepics item=slidepic from=$global.slidepics}
+      <div> <a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}"  /></a></div>
+      {/foreach} </div>
+  </div>
+</div>

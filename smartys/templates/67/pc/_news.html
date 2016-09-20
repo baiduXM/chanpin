@@ -1,0 +1,7 @@
+<section>
+	<ul class="module_news">
+              {foreach name=article item=article from=$list.data}
+                <li><a href="{$article.link}"><span>（{$article.pubdate}）</span>{$article.title}</a></li>
+                {/foreach}
+            </ul>
+</section>

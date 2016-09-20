@@ -1,0 +1,13 @@
+
+  <div class='footersbg'>  
+   <div class="public">
+   <ul class='navs h_o'>
+			{foreach key=key item=naver from=$global.second_navs}
+				<li><a href="{$naver.link}">{$naver.name}</a></li>
+				{if $naver@index+1 == 8}{break}{/if}
+			{/foreach}
+		</ul>
+    <span class="footer_li">{$footprint}</span>
+	</div>
+ </div>
+{$footscript}

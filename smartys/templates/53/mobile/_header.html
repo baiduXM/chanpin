@@ -1,0 +1,28 @@
+
+  <div class="menu public_bg2" style="position: relative;">
+    <div class="nav">
+      <a class="arrow-left" href="#">&lt;</a>
+      <a class="arrow-right" href="#">&gt;</a>
+      <div class="swiper-nav swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="width:40px;">
+            <span class="public_bor">
+              <a href="{$site_url}">
+                <p>网站首页</p>
+              </a>
+            </span> <b>WEBSITE HOMEPAGE</b>
+          </div>
+          {foreach item=nav_list from=$navs}
+                  {* 仅输出类型为 5内容单页 和 外链的栏目（包括5留言板、7微信、8直达号功能） *}
+          <div class="swiper-slide">
+            <span class="public_bor">
+              <a href="{$nav_list.link}">
+                <p>{$nav_list.name}</p>
+              </a>
+            </span> <b>{$nav_list.en_name}</b>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+    </div>
+  </div>

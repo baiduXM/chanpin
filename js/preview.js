@@ -14,7 +14,7 @@
 var PREVIEW_DEMODATA = {
 	list: [{
 		title: '这是一篇测试文章',
-		image: 'http://chanpin.xm12t.com.cn/images/art_02.jpg',
+		image: 'http://swap.5067.org/images/art_02.jpg',
 		link: 'content-news.html',
 		description: '今天天气不错，挺风和日丽的...',
 		pubdate: '2014-12-25',
@@ -35,18 +35,18 @@ var PREVIEW_CONFIG = {
 	title: '网站标题',
 	keywords: '关键词A,关键词B,关键词C',
 	description: '这是这个页面的描述，这是一大段的描述语句，里面有很多的内容，多写点 多写点...',
-	logo: 'http://chanpin.xm12t.com.cn/images/logo.png',
+	logo: 'http://swap.5067.org/images/logo.png',
 	favicon: 'images/favicon.ico',
 	stylecolor: 'blue',
 	footprint: '<p>copyright 2014-2015  备案号：闽ICP备******号<br />多输出一行调试</p><p class="techsupport">技术支持：<a href="http://www.12t.cn/">厦门易尔通网络科技有限公司</a> 人才支持：<a href="http://www.xgzrc.com/">厦门人才网</a></p>',
-	footscript: '<!-- 这里将会输出底部脚本代码 -->\n<script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/quickbar.js?debug"></script><script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/img.js"></script>',
+	footscript: '<!-- 这里将会输出底部脚本代码 -->\n<script type="text/javascript" src="http://swap.5067.org/js/quickbar.js?debug"></script><script type="text/javascript" src="http://swap.5067.org/js/img.js"></script>',
 	headscript: '<!-- 这里将会输出头部脚本代码 -->',
 	navs: [{
 		name: '新闻列表',
 		en_name: 'News',
 		link: 'list-text.html?id=1',
 		icon: '<i class="iconfont">&#xe608;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -56,7 +56,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Company News',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -66,7 +66,7 @@ var PREVIEW_CONFIG = {
 				en_name: 'Hot News',
 				link: 'list-text.html',
 				icon: '<i class="iconfont">&#xe608;</i>',
-				image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+				image: 'http://swap.5067.org/images/cat_01.jpg',
 				description: '这是栏目的一段描述...',
 				current: 0,
 				selected: 0,
@@ -78,7 +78,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Industry News',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -90,7 +90,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Products',
 		link: 'list-imagetext.html?id=3',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 1,
 		selected: 0,
@@ -100,7 +100,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class A',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -111,7 +111,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class B',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 1,
 			selected: 0,
@@ -121,7 +121,7 @@ var PREVIEW_CONFIG = {
 				en_name: 'Class B1',
 				link: 'list-text.html',
 				icon: '<i class="iconfont">&#xe60a;</i>',
-				image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+				image: 'http://swap.5067.org/images/cat_01.jpg',
 				description: '这是栏目的一段描述...',
 				current: 1,
 				selected: 0,
@@ -131,7 +131,7 @@ var PREVIEW_CONFIG = {
 					en_name: 'Class B1a',
 					link: 'list-text.html',
 					icon: '<i class="iconfont">&#xe60a;</i>',
-					image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+					image: 'http://swap.5067.org/images/cat_01.jpg',
 					description: '这是栏目的一段描述...',
 					current: 1,
 					selected: 1,
@@ -144,7 +144,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class C',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -155,7 +155,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class D',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -166,7 +166,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class E',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -178,7 +178,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Lastest Products',
 		link: 'list-image.html?id=4',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -189,7 +189,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'About Us',
 		link: 'list-page.html?id=7',
 		icon: '<i class="iconfont">&#xe60f;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		content: '&lt;p&gt;这里是页面内容，可以使用html&lt;/p&gt;',
 		current: 0,
@@ -200,7 +200,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Company Intro',
 			link: 'list-page.html',
 			icon: '<i class="iconfont">&#xe60f;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -211,7 +211,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Industry News',
 			link: 'list-image.html',
 			icon: '<i class="iconfont">&#xe60d;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -223,7 +223,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Contact Us',
 		link: 'list-page.html?id=8',
 		icon: '<i class="iconfont">&#xe611;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '公司名称：XXX企业<br />公司电话：0592-2323232<br />公司地址：xxxxxxxxxx',
 		content: '&lt;p&gt;这里是页面内容，可以使用html&lt;/p&gt;',
 		current: 0,
@@ -235,7 +235,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'About Us',
 		link: 'list-image.html?id=9',
 		icon: '<i class="iconfont">&#xe60d;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		content: '&lt;p&gt;这里是页面内容，可以使用html&lt;/p&gt;',
 		current: 0,
@@ -246,7 +246,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Company Intro',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -257,7 +257,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Act XXX',
 			link: 'list-image.html',
 			icon: '<i class="iconfont">&#xe60d;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -268,7 +268,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Act XX',
 			link: 'list-image.html',
 			icon: '<i class="iconfont">&#xe60d;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -280,9 +280,9 @@ var PREVIEW_CONFIG = {
 		en_name: 'Feed Back',
 		link: 'list-page.html?id=10',
 		icon: '<i class="iconfont">&#xe610;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
-		content: '&lt;img src="http://chanpin.xm12t.com.cn/images/guestbook.jpg" width="90%" /&gt;',
+		content: '&lt;img src="http://swap.5067.org/images/guestbook.jpg" width="90%" /&gt;',
 		current: 0,
 		selected: 0,
 		type: 5,
@@ -292,7 +292,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Company News',
 		link: 'list-text.html?id=2',
 		icon: '<i class="iconfont">&#xe608;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -302,7 +302,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Nav F1',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -313,7 +313,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Nav F2',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -324,7 +324,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Nav F3',
 			link: 'list-text.html',
 			icon: '<i class="iconfont">&#xe608;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -334,7 +334,7 @@ var PREVIEW_CONFIG = {
 				en_name: 'Nav F3a',
 				link: 'list-imagetext.html',
 				icon: '<i class="iconfont">&#xe608;</i>',
-				image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+				image: 'http://swap.5067.org/images/cat_01.jpg',
 				description: '这是栏目的一段描述...',
 				current: 0,
 				selected: 0,
@@ -344,7 +344,7 @@ var PREVIEW_CONFIG = {
 				en_name: 'Nav F3b',
 				link: 'list-imagetext.html',
 				icon: '<i class="iconfont">&#xe608;</i>',
-				image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+				image: 'http://swap.5067.org/images/cat_01.jpg',
 				description: '这是栏目的一段描述...',
 				current: 0,
 				selected: 0,
@@ -356,7 +356,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Forums',
 		link: 'http://tieba.baidu.com/',
 		icon: '<i class="iconfont">&#xe606;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -368,7 +368,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Nav F1',
 		link: 'list-text.html',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -378,7 +378,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Nav F2',
 		link: 'list-text.html',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 0,
 		selected: 0,
@@ -388,7 +388,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Nav F3',
 		link: 'list-text.html',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		current: 1,
 		selected: 0,
@@ -397,7 +397,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Nav F3a',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 1,
 			selected: 0,
@@ -406,7 +406,7 @@ var PREVIEW_CONFIG = {
 				en_name: 'Nav F3aa',
 				link: 'list-imagetext.html',
 				icon: '<i class="iconfont">&#xe60a;</i>',
-				image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+				image: 'http://swap.5067.org/images/cat_01.jpg',
 				description: '这是栏目的一段描述...',
 				current: 1,
 				selected: 1,
@@ -417,7 +417,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Nav F3b',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			current: 0,
 			selected: 0,
@@ -452,13 +452,13 @@ var PREVIEW_CONFIG = {
 	},
 	article: {
 		title: '文章标题',
-		image: 'http://chanpin.xm12t.com.cn/images/art_01.jpg',
+		image: 'http://swap.5067.org/images/art_01.jpg',
 		images: [{
 			title: '产品图1',
-			image: 'http://chanpin.xm12t.com.cn/images/art_02.jpg'
+			image: 'http://swap.5067.org/images/art_02.jpg'
 		}, {
 			title: '产品图2',
-			image: 'http://chanpin.xm12t.com.cn/images/art_01.jpg'
+			image: 'http://swap.5067.org/images/art_01.jpg'
 		}],
 		description: '今天天气不错，挺风和日丽的...',
 		content: '&lt;p&gt;文章内容...&lt;/p&gt;&lt;p&gt;一大段文章内容...&lt;/p&gt;',
@@ -485,7 +485,7 @@ var PREVIEW_CONFIG = {
 		name: '栏目A',
 		en_name: 'Nav A',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		link: 'list-text.html',
 		description: '这是栏目A的一段描述...',
 		content: '&lt;p&gt;这里是页面内容，可以使用html&lt;/p&gt;',
@@ -519,7 +519,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'News',
 		link: 'list-text.html?id=1',
 		icon: '<i class="iconfont">&#xe608;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 1,
@@ -530,7 +530,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Company News',
 		link: 'list-text.html?id=2',
 		icon: '<i class="iconfont">&#xe608;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 1,
@@ -541,7 +541,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Products',
 		link: 'list-image.html?id=3',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 2,
@@ -551,7 +551,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class A',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			type: 3,
 			showtype: 1,
@@ -561,7 +561,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class B',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			type: 3,
 			showtype: 1,
@@ -571,7 +571,7 @@ var PREVIEW_CONFIG = {
 			en_name: 'Class C',
 			link: 'list-imagetext.html',
 			icon: '<i class="iconfont">&#xe60a;</i>',
-			image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+			image: 'http://swap.5067.org/images/cat_01.jpg',
 			description: '这是栏目的一段描述...',
 			type: 3,
 			showtype: 1,
@@ -582,7 +582,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Lastest Products',
 		link: 'list-image.html?id=4',
 		icon: '<i class="iconfont">&#xe60a;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 2,
@@ -593,7 +593,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Hot Products',
 		link: 'list-image.html?id=5',
 		icon: '<i class="iconfont">&#xe614;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 2,
@@ -604,7 +604,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Company Photos',
 		link: 'list-imagetext.html?id=6',
 		icon: '<i class="iconfont">&#xe60d;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		data: objClone(PREVIEW_DEMODATA.list),
 		type: 3,
@@ -615,7 +615,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'About Us',
 		link: 'list-page.html?id=7',
 		icon: '<i class="iconfont">&#xe60f;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		content: '&lt;p&gt;这里是页面内容，可以使用html&lt;/p&gt;',
 		type: 4,
@@ -626,7 +626,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Double 12 Act',
 		link: 'http://wx.dn160.com.cn/index.php?g=Wap&m=Guajiang&a=index&token=fwpmnq1407894165&type=2&wecha_id=ok6CKuN_fX__XeXCn&id=156',
 		icon: '<i class="iconfont">&#xe615;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		type: 7,
 		childmenu: null
@@ -635,9 +635,9 @@ var PREVIEW_CONFIG = {
 		en_name: 'Guest Book',
 		link: 'list-page.html?id=10',
 		icon: '<i class="iconfont">&#xe610;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
-		content: '&lt;img src="http://chanpin.xm12t.com.cn/images/guestbook.jpg" width="90%" /&gt;',
+		content: '&lt;img src="http://swap.5067.org/images/guestbook.jpg" width="90%" /&gt;',
 		type: 5,
 		childmenu: null
 	}, {
@@ -645,7 +645,7 @@ var PREVIEW_CONFIG = {
 		en_name: 'Friends Links',
 		link: 'http://www.baidu.com',
 		icon: '<i class="iconfont">&#xe612;</i>',
-		image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+		image: 'http://swap.5067.org/images/cat_01.jpg',
 		description: '这是栏目的一段描述...',
 		type: 6,
 		childmenu: null
@@ -1981,7 +1981,7 @@ function saveConfig(index, data) {
 					name: '栏目B',
 					en_name: 'Nav B',
 					icon: '<i class="iconfont">&#xe60a;</i>',
-					image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+					image: 'http://swap.5067.org/images/cat_01.jpg',
 					link: 'list-text.html',
 					description: '这是栏目A的一段描述...',
 					childmenu: [{
@@ -1989,7 +1989,7 @@ function saveConfig(index, data) {
 						en_name: 'Nav B1',
 						link: 'list-imagetext.html',
 						icon: '<i class="iconfont">&#xe60a;</i>',
-						image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+						image: 'http://swap.5067.org/images/cat_01.jpg',
 						description: '这是栏目的一段描述...',
 						childmenu: null
 					}, {
@@ -1997,7 +1997,7 @@ function saveConfig(index, data) {
 						en_name: 'Nav B2',
 						link: 'list-imagetext.html',
 						icon: '<i class="iconfont">&#xe60a;</i>',
-						image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+						image: 'http://swap.5067.org/images/cat_01.jpg',
 						description: '这是栏目的一段描述...',
 						childmenu: null
 					}, {
@@ -2005,7 +2005,7 @@ function saveConfig(index, data) {
 						en_name: 'Nav B3',
 						link: 'list-imagetext.html',
 						icon: '<i class="iconfont">&#xe60a;</i>',
-						image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+						image: 'http://swap.5067.org/images/cat_01.jpg',
 						description: '这是栏目的一段描述...',
 						childmenu: null
 					}, {
@@ -2013,7 +2013,7 @@ function saveConfig(index, data) {
 						en_name: 'Nav B4',
 						link: 'list-imagetext.html',
 						icon: '<i class="iconfont">&#xe60a;</i>',
-						image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+						image: 'http://swap.5067.org/images/cat_01.jpg',
 						description: '这是栏目的一段描述...',
 						childmenu: null
 					}, {
@@ -2021,7 +2021,7 @@ function saveConfig(index, data) {
 						en_name: 'Nav B5',
 						link: 'list-imagetext.html',
 						icon: '<i class="iconfont">&#xe60a;</i>',
-						image: 'http://chanpin.xm12t.com.cn/images/cat_01.jpg',
+						image: 'http://swap.5067.org/images/cat_01.jpg',
 						description: '这是栏目的一段描述...',
 						childmenu: null
 					}]
@@ -2092,7 +2092,7 @@ function saveConfig(index, data) {
 					slimmingK.link = 'list-page.html?id=10';
 					slimmingK.posturl = 'javascript:alert(\'留言功能无法本地测试！\');';
 					slimmingK.icon = '<i class="iconfont">&#xe610;</i>';
-					slimmingK.image = 'http://chanpin.xm12t.com.cn/images/cat_01.jpg';
+					slimmingK.image = 'http://swap.5067.org/images/cat_01.jpg';
 					slimmingK.description = '在线留下你的反馈信息！';
 				} else if (typeof dataK.config !== 'object' || typeof dataK.config.filter === 'undefined' || dataK.config.filter.indexOf('ALL') !== -1) {
 					// 获取所有类型的栏目
@@ -2244,7 +2244,7 @@ onReady(function() {
 					};
 				}
 			}
-			//PREVIEW_CONFIG.footscript += '<script type="text/javascript" src="http://chanpin.xm12t.com.cn/js/quickbar.js"></script>';
+			//PREVIEW_CONFIG.footscript += '<script type="text/javascript" src="http://swap.5067.org/js/quickbar.js"></script>';
 		}else{
 			window.previewJSQuickbar = {enable: false};
 		}
@@ -2270,7 +2270,7 @@ onReady(function() {
 			var sourceCategoryDatabase = '';
 			switch (true) {
 				case TEMPLATE_CONFIG.Config.Category.indexOf('旅游')!=-1:
-					sourceCategoryDatabase = 'http://chanpin.xm12t.com.cn/json/preview-lvyou.json';
+					sourceCategoryDatabase = 'http://swap.5067.org/json/preview-lvyou.json';
 					break;
 				default:
 					callbackChangeCategory();
@@ -2333,7 +2333,7 @@ onReady(function() {
 						PREVIEW_CONFIG_edit = objClone(PREVIEW_CONFIG);
 						var jsJSON = document.createElement('script');
 						jsJSON.setAttribute('type', 'text/javascript');
-						jsJSON.setAttribute('src', 'http://chanpin.xm12t.com.cn/js/json2.js');
+						jsJSON.setAttribute('src', 'http://swap.5067.org/js/json2.js');
 						jsJSON.onload = jsJSON.onreadystatechange = function() {
 							typeof jQuery === 'undefined' ? (function() {
 								var jsJQuery = document.createElement('script');
@@ -2345,7 +2345,7 @@ onReady(function() {
 							function jsJQueryOnload() {
 								var jsJsoneditor = document.createElement('script');
 								jsJsoneditor.setAttribute('type', 'text/javascript');
-								jsJsoneditor.setAttribute('src', 'http://chanpin.xm12t.com.cn/js/jquery.jsoneditor.min.js');
+								jsJsoneditor.setAttribute('src', 'http://swap.5067.org/js/jquery.jsoneditor.min.js');
 								jsJsoneditor.onload = jsJsoneditor.onreadystatechange = function() {
 									// Modify PREVIEW_CONFIG start
 									var _mask = $('<div/>').css({
@@ -2418,13 +2418,13 @@ onReady(function() {
 								cssJsoneditor.setAttribute('type', 'text/css');
 								cssJsoneditor.setAttribute('rev', 'stylesheet');
 								cssJsoneditor.setAttribute('rel', 'stylesheet');
-								cssJsoneditor.setAttribute('href', 'http://chanpin.xm12t.com.cn/css/jsoneditor.css');
+								cssJsoneditor.setAttribute('href', 'http://swap.5067.org/css/jsoneditor.css');
 								(document.head || document.getElementsByTagName('head')[0]).appendChild(cssJsoneditor);
 								var cssButtons = document.createElement('link');
 								cssButtons.setAttribute('type', 'text/css');
 								cssButtons.setAttribute('rev', 'stylesheet');
 								cssButtons.setAttribute('rel', 'stylesheet');
-								cssButtons.setAttribute('href', 'http://chanpin.xm12t.com.cn/css/buttons.css');
+								cssButtons.setAttribute('href', 'http://swap.5067.org/css/buttons.css');
 								(document.head || document.getElementsByTagName('head')[0]).appendChild(cssButtons);
 							}
 						};
@@ -2486,8 +2486,8 @@ onReady(function() {
 								}
 							}
 							for (var scripts = document.querySelectorAll("script[src]:not([src^='{$site_url}'])"), i = scripts.length; i--;) {
-								if (scripts[i].getAttribute("src").indexOf('preview.js') != -1 && scripts[i].getAttribute("src") != 'http://chanpin.xm12t.com.cn/js/preview.js') {
-								//	throw new Error('【previewJS】请引用服务端文件：http://chanpin.xm12t.com.cn/js/preview.js');
+								if (scripts[i].getAttribute("src").indexOf('preview.js') != -1 && scripts[i].getAttribute("src") != 'http://swap.5067.org/js/preview.js') {
+								//	throw new Error('【previewJS】请引用服务端文件：http://swap.5067.org/js/preview.js');
 								} else if (!/^http[s]?:\/\//.test(scripts[i].getAttribute("src")) && !/^\{\$.*\}$/.test(scripts[i].getAttribute("src"))) {
 									console.log(scripts[i].getAttribute("src"));
 									throw new Error('所有的js引用script都必须加入路径变量【{$site_url}】\r\n详情参见：http://pme.eexx.me/doku.php?id=ued:template#%E6%A8%A1%E6%9D%BFjs_css%E5%BC%95%E7%94%A8');

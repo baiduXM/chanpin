@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html manifest="huancun.manifest">
+<head>
+  <!-- 实时预览调试代码，模板开发完成后删除 -->
+  
+  <!-- 调试代码 End -->
+  <script type="text/javascript">
+// 跳转PC页面
+{if $site_another_url}
+    if (!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+        location.href = '{$site_another_url}';
+    }
+{/if}
+</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="telephone=no, email=no" name="format-detection">
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <meta name="keywords" content="{$keywords}" />
+  <meta name="description" content="{$description}" />
+  <link rel="shortcut icon" href="{$favicon}" type="image/x-icon" />
+  <title>{$title}</title>
+  <link rel="stylesheet" href="{$site_url}css/reset.css" />
+  <link rel="stylesheet" href="{$site_url}css/public.css" />
+    <link rel="stylesheet" href="{$site_url}css/style.css" />
+<script>
+window.addEventListener('load', function(){
+  setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+});//safari浏览器可以通过此代码来隐藏地址栏
+</script>
+</head>
+<body>
+  <div class="body">
+   {include file="./_left_navs.html"}
+    <div class="wrap page-active">
+      <div class="index-wrap">
+        <header class="header page_h">
+          <div class="header_menu" id="header_menu"><i class="icon iconfont">&#xe603;</i></div>
+          <h1 class="logo">搜索结果</h1>
+          <a href="{$site_url}" class="to_home"><i class="icon iconfont">&#xe620;</i></a>
+        </header>
+
+        <section>
+                    
+          <div class="list_text">          
+            
+            {if $search.total eq 0}
+              <p class="search_p">没有查找到相关数据！</p>
+            {else}   
+              <p class="search_p">以下是关键字“{$search.keyword}”的搜索结果</p>
+              {foreach name=article item=article from=$search.data}
+              <article>
+                <header>
+                  <h4><a href="{$article.link}">{$article.title}</a></h4>
+                  <time pubdate="pubdate">{$article.pubdate}</time>        
+                </header>
+                <div class="text">{$article.description|unescape:"html"}</div>             
+              </article>
+              {/foreach}
+            {/if}
+          </div>
+
+          {include file="./_page_normal.html"}
+        </section>
+        <footer class="foot">{$footprint}</footer>
+      </div>
+      <div class="opacity2"></div>
+    </div>
+    {include file="./_bottom_navs.html"}
+  </div>
+
+{$footscript}
+<script src="{$site_url}js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="{$site_url}js/jquery.min.js"></script>
+<script src='{$site_url}js/pagenavs_sub3.js'></script>
+<script type="text/javascript" src="{$site_url}js/function.js"></script>
+</body>
+</html>

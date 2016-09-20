@@ -1,0 +1,60 @@
+<div class="side clearfix">
+	<div class="side_inner">
+		
+
+
+{if $pagenavs}
+<h4>{$posnavs[0].name}</h4>
+<nav>
+<ul class="mtree">
+	{foreach name=pagenavs item=nav from=$pagenavs}
+    <li  class="{if $nav.current}mtree-open{/if} {if $nav.selected}selected{/if}"><a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+    {if $nav.childmenu}
+        <ul>
+          {foreach key=key item=nav_list from=$nav.childmenu}
+            <li class="{if $nav_list.current}mtree-open{/if} {if $nav_list.selected}selected{/if}"><a href="{if $nav_list.childmenu}javascript:;{else}{$nav_list.link}{/if}">{$nav_list.name}</a>
+             {if $nav_list.childmenu}
+                <ul>
+                  {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+                  <li class="{if $nav_listsec.current}mtree-open{/if} {if $nav_listsec.selected}selected{/if}"><a href="{$nav_listsec.link}">{$nav_listsec.name}</a></li>
+                  {/foreach}
+                </ul> 
+               {/if}                                             
+            </li>
+          {/foreach}
+        </ul>
+        {/if}                            
+    </li>
+    {/foreach}					
+</ul>
+</nav>
+{else}	<!-- 让客服自己选择，如果当前无子栏目 展现的目标栏目 -->
+<h4>{$_side.pagenavs.name}</h4>
+<nav>
+	
+	<ul class="mtree">
+		{foreach name=pagenavs2 item=nav from=$_side.pagenavs.childmenu}
+		<li  class="{if $nav.current}mtree-open{/if} {if $nav.selected}selected{/if}"><a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+    {if $nav.childmenu}
+	        <ul>
+	          {foreach key=key item=nav_list from=$nav.childmenu}
+	            <li class="{if $nav_list.current}mtree-open{/if} {if $nav_list.selected}selected{/if}"><a href="{if $nav_list.childmenu}javascript:;{else}{$nav_list.link}{/if}">{$nav_list.name}</a>
+	             {if $nav_list.childmenu}
+	                <ul>
+	                  {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+	                  <li class="{if $nav_listsec.current}mtree-open{/if} {if $nav_listsec.selected}selected{/if}"><a href="{$nav_listsec.link}">{$nav_listsec.name}</a></li>
+	                  {/foreach}
+	                </ul> 
+	               {/if}                                             
+	            </li>
+	          {/foreach}
+	        </ul>
+	        {/if}                            
+	    </li>
+		{/foreach}
+	</ul>
+</nav>
+{/if}
+
+</div>
+</div>

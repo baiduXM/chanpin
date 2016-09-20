@@ -1,0 +1,37 @@
+<div class="heaer public_bg1">
+  <div class="logo">
+    <img src="{$logo}" width="100%"></div>
+  <div id="slideBox" class="slideBox">
+    <div class="menu">
+      <div class="nav">
+        <div class="swiper-nav swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="{$site_url}" class="xx">网站首页</a>
+            </div>
+            {foreach item=nav_list from=$navs}
+            {* 仅输出类型为 5内容单页 和 外链的栏目（包括5留言板、7微信、8直达号功能） *}
+            <div class="swiper-slide">
+              <a href="{$nav_list.link}" class="xx">{$nav_list.name}</a>
+            </div>
+            {/foreach}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hd">
+      <ul></ul>
+    </div>
+    <div class="bd">
+      <ul>
+        {foreach name=slidepics item=slidepic from=$global.slidepics}
+        <li>
+          <a class="pic" href="{$slidepic.link}">
+            <img src="{$slidepic.image}" />
+          </a>
+        </li>
+        {/foreach}
+      </ul>
+    </div>
+  </div>
+</div>

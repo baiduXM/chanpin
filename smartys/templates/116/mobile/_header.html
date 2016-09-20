@@ -1,0 +1,46 @@
+<header>
+    <div class="topa">
+        <div class="header">
+        	<div class="fanhui"><a href="javascript:window.history.back()">&lt;返回</a></div>
+        	<div class="logo"><img src="{$logo}" width="100%"></div>
+            <div class="menu2" id="quickbar-showcats"><a href="#"><span></span></a></div>     
+        </div> 
+        <div class="dbaner"><img src="{$site_url}images/baner2.jpg" width="100%"></div>  
+        <div class="toplist">
+        	<div class="box-title">
+               <div class="boxbottom"></div>
+               <div class="winetu"><img src="{$site_url}images/menuicon2.png" width="100%"></div>
+               <div class="btitles">{$list.name}</div>
+                <div class="winnbeer"><img src="{$site_url}images/wine.png" width="100%"></div>
+                <span class="more3" id="first">分类<span id="down">∧</span><span id="up">∨</span></span>
+            <div class="hide-class">
+			{foreach name=pagenavs item=nav from=$pagenavs}
+			<dl><a href="{$nav.link}"><span class="icon">&bull;</span>{$nav.name}</a></dl>
+			{if $nav.childmenu}
+	
+			{foreach key=key item=nav_list from=$nav.childmenu}
+        
+          <dl><a href="{$nav_list.link}"><span class="icon">&bull;</span>->{$nav_list.name}</a></dl>
+          {if $nav_list.childmenu}
+          
+            {foreach key=key item=nav_listsec from=$nav_list.childmenu}
+           
+             <dl><a href="{$nav_listsec.link}"><span class="icon">&bull;</span>-->{$nav_listsec.name}</a></dl>
+           
+            {/foreach}
+          
+          {/if}
+        
+        {/foreach}
+     
+      {/if}
+  
+    {/foreach}
+          </div>                     
+            </div>
+        </div>              
+        
+   
+
+    </div>
+    </header>

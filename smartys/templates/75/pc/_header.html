@@ -1,0 +1,57 @@
+    <div class="header">
+      <div class="headerbox">
+        <div class="logo"><a href="{$site_url}" title="返回首页"><img src="{$logo}"></a></div>
+        <div class="menu">
+         
+            <ul id="nav" class="nav">
+
+                 {$limit = 5}
+                 <li class="nLi"  style="width:{100/($limit+1)}%"><h3><a href="{$site_url}">网站首页</a></h3></li>
+                  {foreach item=nav from=$navs}
+                    <li class="nLi {if $nav.current}on{/if}" style="width:{100/($limit+1)}%">
+                      <h3><a href="{$nav.link}">{$nav.name}</a></h3>
+                      {if $nav.childmenu}
+                        <ul class="sub">
+                          {foreach item=nav_list from=$nav.childmenu}
+                          <li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                          {/foreach}
+                        </ul>
+                      {/if}
+                    </li>
+                    {if $nav@index+1 gte $limit}{break}{/if}
+                  {/foreach}              
+            </ul>      
+        </div>
+      </div>
+    </div>
+
+    <!--banner-->
+    <div class="banner">
+
+      <div class="focusBox" style="margin:0 auto">
+          <ul class="pic">
+            {foreach name=slidepics item=slidepic from=$global.slidepics}
+                <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>       
+            {/foreach}
+
+          </ul>
+          <a class="prev" href="javascript:void(0)"></a>
+          <a class="next" href="javascript:void(0)"></a>
+          <ul class="hd">
+            {foreach name=slidepics item=slidepic from=$global.slidepics}
+              <li></li>
+            {/foreach}
+           
+          </ul>
+      </div>
+      <div class="searchbox">
+        <div class="search">
+          <form action="{$search_action}" method="GET">
+            <input class="sinp fl" type="text" name="s" value="请输入关键字">
+            <input class="sbtn fl" type="submit" value="搜 索">
+          </form>          
+        </div>
+
+      </div>
+
+    </div>

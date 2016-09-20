@@ -1,0 +1,22 @@
+
+<footer>
+<div class="foooter">
+<div class='wrap'>
+	<div class='flink'>
+		<span>友情链接：</span>
+  {foreach name=friend_link item=friend from=$global.links}
+		    <a href="{$friend.link}">{$friend.title}</a> 
+		 	{/foreach}  
+	</div>
+</div>
+<div class='footer'>
+<a href="{$site_url}">首页</a> |
+            {foreach name=navs item=nav from=$navs}
+				<a href="{$nav.link}" >{$nav.name}</a> |
+    {/foreach}<br />  {$contact.company}  
+	 {$footprint}  
+</div>
+</div>
+</footer>
+
+{$footscript}

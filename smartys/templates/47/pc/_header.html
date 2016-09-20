@@ -1,0 +1,40 @@
+<div class="header">
+	<h1 class="logo"><a href="{$site_url}"><img src="{$logo}" alt="{$title}"/></a></h1>
+	<div class="nav">		
+		<div></div>
+		<ul class="clearfix">
+		{$limit = 7}
+		{foreach name=navs item=nav from=$navs}
+		{if $navs|count lt $limit}{$limit = $navs|count}{/if}
+			<li class="{if $nav.current}cur{/if}">
+				<a href="{$nav.link}">{$nav.name}</a>
+				{if $nav.childmenu}
+				<ul>
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav_list.current}cur{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+					{/foreach}
+				</ul>
+				{/if}
+			</li>
+			{if $nav@index+1 eq $limit}{break}{/if}
+		{/foreach}
+		</ul>
+	</div>
+	<div class="search">
+		<form id="form" class="fm" action="{$search_action}" method="GET" name="fm">
+			<span class="s_ipt_wr">
+				<input type="text" id="kw" name="s" class="s_ipt" placeholder=""/>
+			</span>
+			<span class="s_btn_wr">
+				<input type="submit" class="s_btn" id="submit" value="">
+			</span>
+		</form>
+	</div>
+</div>
+<div class="slide">
+	<ul>
+		{foreach item=slidepic from=$_header.slidepics}
+			<li><img src="{$slidepic.image}" alt="{$slidepic.title|strip_tags}"></li>
+		{/foreach} 
+	</ul>
+</div>

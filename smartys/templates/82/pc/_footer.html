@@ -1,0 +1,15 @@
+<div class="footerb">
+        	<div class="public midfot">
+            	<div class="fotmenu">
+<a href="{$site_url}">首页</a> |
+            {foreach name=navs item=nav from=$navs}
+				<a href="{$nav.link}" >{$nav.name}</a> |
+    {/foreach}<br />            
+ {$footprint} 
+                
+                </div>
+                <div class="flogo"><img  src="{$logo}" alt="{$title}" /></div>
+            </div>
+           
+        </div>
+        {$footscript}

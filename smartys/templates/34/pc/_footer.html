@@ -1,0 +1,17 @@
+<div id="footer_bg">
+<div id="footer" class="wrapper">
+<div id="friendlink">
+<div class="title"> <div class="ch">友情链接</div><div class="en">friendlink</div></div>
+<div class="inner clearfix">
+{foreach name=friend item=friend from=$global.links}
+<a href="{$friend.link}"><img src="{$friend.image}" /></a>
+{/foreach} 
+</div>
+</div>
+
+<div id="copyriht">{$footprint}</div>
+</div>
+
+
+</div>
+{$footscript}

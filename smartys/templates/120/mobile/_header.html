@@ -1,0 +1,23 @@
+
+	  
+	  <div class="heaer">
+    <div class="baner">
+          	<div class="logo"><img src="{$logo}" width="100%"></div>
+            <div class="quickbar-showcats"><a href="#" id="quickbar-showcats"><img src="{$site_url}icon/66.png"></a></div>
+            
+	<div id="slideBox" class="slideBox1">
+    <div class="hd">
+            <ul></ul>
+      </div>
+	<div class="bd">
+		<ul>
+			{foreach name=slidepics item=slidepic from=$global.slidepics}
+			<li><a class="pic" href="{$slidepic.link}"><img src="{$slidepic.image}" /></a></li>
+			{/foreach}
+		</ul>
+	</div>
+	
+			</div>
+			
+   </div>
+      </div>

@@ -1,0 +1,45 @@
+<div class="header">
+    <div class="logo fl"><a href="{$site_url}"><img src="{$logo}" alt="{$title}"  /></a></div>
+    <div class="menu fr">
+       <ul id="nav" class="nav clearfix">
+          {$litmit = 6}
+            {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+               <li class="nLi" style="width:{100/($litmit+1)-1}%">
+                  <h3><a href="{$site_url}" class="a1"><b>首页</b></a></h3>
+              </li>
+             {foreach name=navs item=nav from=$navs}
+                 <li  class="fl{if $nav.current} current{/if} nLi" style="width:{100/($litmit+1)}%">
+                    <h3><a href="{$nav.link}" class="a1"><b>{$nav.name}</b></a></h3>
+                    <ul class="sub clearfix">
+                      {if $nav.childmenu}
+                        {foreach key=key item=nav_list from=$nav.childmenu}
+                           <li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+                        {/foreach}
+                      {/if}
+                    </ul>
+                 </li>
+                {if $nav@index+1 gte $litmit}{break}{/if}
+          {/foreach}
+       </ul> 
+    </div>
+</div>
+<div class="datu">
+    <div class="banner">
+          <div class="focusBox" style="margin:0 auto">
+                  <ul class="pic">
+                             {foreach name=slidepic item=slidepic from=$global.slidepics}
+                              <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>                            
+                             {/foreach}   
+      
+                  </ul>
+                  <a class="prev" href="javascript:void(0)"></a>
+                  <a class="next" href="javascript:void(0)"></a>
+                          <ul class="hd">
+                           {foreach name=slidepic item=slidepic from=$global.slidepics}
+                             <li>{$slidepic@index+1}</li>
+                           {/foreach}  
+                          </ul>
+          </div>
+        </div>
+</div>
+<div class="phontes" ><a href="{$site_url}" class="tdong">wedding<b>photo</b></a></div>

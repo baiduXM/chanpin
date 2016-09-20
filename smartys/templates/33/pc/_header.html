@@ -1,0 +1,72 @@
+
+<header>
+	<section class="headtop">
+<div class="header">
+            		<div class="hd_con">
+                    		<h1 class="logo"><a href="{$site_url}"><img  src="{$logo}" alt="{$title}"   /></a></h1>
+                            <div class="lg_right" style="padding-top:15px;">
+                                <span class="sreach">
+    <form action="{$search_action}" method="GET">
+    	<input type="submit" class="submit_01" />
+    	<input type="text" name="s" value="" class="text_01" />
+    </form>
+
+                                
+                                </span>
+                            </div>
+                    </div>
+            </div>
+        		
+<div class="menu main_nav-percent">       
+<ul id="nav" class="nav clearfix">
+        {$litmit = 8}
+        {if $navs|count lt $litmit}{$litmit = $navs|count}{/if}
+			<li class="nLi" style="width:{100/($litmit+1)-1}%">
+            	<h3><a href="{$site_url}">首页</a></h3>
+			</li>
+            {foreach name=navs item=nav from=$navs}
+			<li  class="fl{if $nav.current} current{/if} nLi" style="width:{100/($litmit+1)}%">
+					<h3><a href="{$nav.link}">{$nav.name}</a></h3>
+				<ul class="sub clearfix">
+                {if $nav.childmenu}
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a></li>
+					{/foreach}
+                    {/if}
+				</ul>
+			</li>
+			{if $nav@index+1 gte $litmit}{break}{/if}
+          {/foreach}
+                                          
+		</ul>
+             
+       </div>
+             
+             <div class="banner">
+             		<div id="slideBox" class="slideBox">
+			<div class="hd">
+				<ul>
+                {foreach name=slidepics item=slidepic from=$global.slidepics}
+                 <li>{$slidepic@index+1}</li>
+                   {/foreach}
+                 </ul>
+			</div>
+			<div class="bd">
+				<ul>
+                  {foreach name=slidepics item=slidepic from=$global.slidepics}
+                      <li><a href="{$slidepic.link}" target="_blank"><img src="{$slidepic.image}" alt="{$slidepic.title}" /></a></li>
+                    
+                    {/foreach}                     
+					
+				</ul>
+			</div>	
+
+
+		</div>
+
+
+             </div> 
+ </section>
+ </header>
+ 
+        	

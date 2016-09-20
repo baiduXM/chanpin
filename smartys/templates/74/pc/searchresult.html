@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<script type="text/javascript" src="http://common.mn.sina.com.cn/public/resource/lib/jquery.jcarousellite.js"></script>
+
+<link rel="stylesheet" rev="stylesheet" href="{$site_url}css/style_{$stylecolor}.css" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="js/dd_delatedpng.js" ></script>
+<script type="text/javascript">//如果多个element使用PNG,则用','分隔
+DD_belatedPNG.fix('div,ul,li,a,p,img');
+</script>
+<![endif]-->
+<script type="text/javascript" src="{$site_url}js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="{$site_url}js/jquery.SuperSlide.2.1.js"></script>
+
+<link href="{$site_url}css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$site_url}js/index.js"></script>
+<script type="text/javascript">
+	// 跳转手机页面
+	{if $site_another_url}
+		if (!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+			location.href = '{$site_another_url}';
+		}
+	{/if}
+	</script>
+	<title>{$title}</title>
+
+</head>
+
+<body>
+<div class="wappers">
+    {include file="./_header.html"}
+        <div class="containers h_o ">
+        	<div class="cont h_o">
+			  	<div class="left fl p_r">
+	             {include file="./_pagenavs_sub3.html"}                          
+				</div>			  
+				<div class="right h_o fr">
+	                    <h3 class="list_title">搜索关键词为“<span>{$search.keyword}</span>”的产品/文章，共搜索到{$search.total}个结果</h3>
+						<div class="article h_o">
+			            	<ul class="news_ls"> 	
+                               {foreach item=article from=$search.data}
+			                     <li><a href="{$article.link}"><span class="date"><time datetime="{$article.pubdate}" pubdate="pubdate">{$article.pubdate}</time></span>{$article.title}</a></li>
+               					{/foreach} 
+                          	</ul>
+                           <ul class="clearfix munber">
+								<li ><a href="{$page_links.first_link}">首页</a></li>
+								<li ><a href="{$page_links.prev_link}">上一页</a></li>
+								{foreach item=near_link key=near_page from=$page_links.nears_link}
+								{if $near_page == $page_links.current_page}
+									<li class=" current"><a>{$near_page}</a></li>
+								{else}
+									<li ><a href="{$near_link}">{$near_page}</a></li>
+								{/if}
+								{/foreach}
+								<li><a href="{$page_links.next_link}">下一页</a></li>
+								<li><a href="{$page_links.last_link}">末页</a></li>
+							</ul> 
+			            </div>    
+           		</div>
+	         </div> 
+	        {include file="./_footer.html"}     
+       </div>
+ </div>  
+
+</body>
+</html>

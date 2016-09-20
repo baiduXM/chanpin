@@ -1,0 +1,58 @@
+<!-- 二级栏目列表（展示到三级子栏目） -->
+{if $pagenavs}
+<div class="sidebar">
+ 		
+	 	<!-- 下表为0的面包屑导航正好是一级栏目的当前栏目 -->
+		<ul class="first">
+			{foreach name=pagenavs item=nav from=$pagenavs}
+			<li class="{if $nav.current}current{/if}">
+				<a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+				{if $nav.childmenu}
+				<ul class="second">
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a>
+					{if $nav_list.childmenu}
+						<ul class="three">
+							{foreach key=key item=nav_next_list from=$nav_list.childmenu}
+							<li class="{if $nav_next_list.current}current{/if}"><a href="{$nav_next_list.link}">{$nav_next_list.name}</a></li>
+							{/foreach}
+						</ul>
+						{/if}
+					</li>
+					{/foreach}
+				</ul>
+				{/if}
+			</li>
+			{/foreach}
+		</ul>
+
+
+</div>
+{else}	<!-- 让客服自己选择，如果当前无子栏目 展现的目标栏目 -->
+<div class="sidebar">
+ 		
+	 	<!-- 下表为0的面包屑导航正好是一级栏目的当前栏目 -->
+		<ul class="first">
+			{foreach name=pagenavs item=nav from=$_pagenavs_sub3.pagenavs}
+			<li class="{if $nav.current}current{/if}">
+				<a href="{if $nav.childmenu}javascript:;{else}{$nav.link}{/if}">{$nav.name}</a>
+				{if $nav.childmenu}
+				<ul class="second">
+					{foreach key=key item=nav_list from=$nav.childmenu}
+					<li class="{if $nav_list.current}current{/if}"><a href="{$nav_list.link}">{$nav_list.name}</a>
+						{if $nav_list.childmenu}
+						<ul class="three">
+							{foreach key=key item=nav_next_list from=$nav_list.childmenu}
+							<li class="{if $nav_next_list.current}current{/if}"><a href="{$nav_next_list.link}">{$nav_next_list.name}</a></li>
+							{/foreach}
+						</ul>
+						{/if}
+					</li>
+					{/foreach}
+				</ul>
+				{/if}
+			</li>
+			{/foreach}
+		</ul>
+</div>
+{/if}

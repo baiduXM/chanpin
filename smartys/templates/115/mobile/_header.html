@@ -1,0 +1,15 @@
+<div class="menu">
+            	<div class="nav">
+            	<a class="arrow-left" href="#">&lt;</a> 
+   				 <a class="arrow-right" href="#">&gt;</a>
+               <div class="swiper-nav swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><span><a href="{$site_url}">Home</a></span></div>
+					  {foreach name=key item=nav from=$navs}
+                      <div class="swiper-slide"><span><a href="{$nav.link}">{$nav.en_name}</a></span></div>
+                      {/foreach}
+
+                  </div>
+				</div>
+                </div>
+    </div>

@@ -1,0 +1,11 @@
+<div class="fixed public_bg">
+      <ul class=" box" id="box">
+    <li><a href="#" id="class" class="public_color1"><p class="fix_icon"><img src="icon/6.png" width="33" width="33"></p><p class="title">导航</p></a></li>
+	{foreach name=bottomnavs item=bottomnav from=$global.bottomnavs}
+	{if $bottomnav.enable}
+	<li><a href="{$bottomnav.link}" class="public_color1"><p class="fix_icon"><img src="{$bottomnav.image}" width="33" width="33"></p><p class="title">{$bottomnav.name}</p></a></li>
+    {/if}
+	{/foreach}
+	</ul>
+    </div>
+	{$footscript}
