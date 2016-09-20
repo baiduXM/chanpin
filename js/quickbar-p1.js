@@ -252,7 +252,7 @@ function jqueryfunc() {
 
             // 添加返回顶部事件
             if ($("#quickbar_top")) {
-                $("#quickbar_top").on('click', function(event) {
+                $("#quickbar_top").bind('click', function(event) {
                     var speed = 300; //滑动的速度
                     $('html,body').animate({
                         scrollTop: 0
