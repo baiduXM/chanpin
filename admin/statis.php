@@ -1,12 +1,13 @@
 <?php
-
+//exit;
 /**
+ * 不查询log日志，直接统计+1
+ * ======
  * 查看session_id是否存在对应的cus_id
  * 存在-->无操作
  * 不存在-->访问统计+1，
  */
 session_start();
-//$db = new PDO("mysql:host=localhost;dbname=unify", "root", ""); //链接数据库
 $db = new PDO("mysql:host=localhost;dbname=db_swap", "root", ""); //链接数据库
 
 $query = $_SERVER['QUERY_STRING'];
@@ -26,18 +27,19 @@ $platform = $param['platform'];
 //$cus_id = $_POST['cus_id'];
 //$platform = $_POST['platform'];
 
-$ip = $_SERVER['REMOTE_ADDR'];
-$expires = date("Y-m-d H:i:s", time() + 60 * 30); //30分钟
-$now = date("Y-m-d H:i:s");
+//$ip = $_SERVER['REMOTE_ADDR'];
+//$expires = date("Y-m-d H:i:s", time() + 60 * 30); //30分钟
+//$now = date("Y-m-d H:i:s");
 $date = date("Y-m-d");
-$_SESSION['cus_id'] = $cus_id;
-$_SESSION['sessid'] = session_id();
-$sessid = session_id();
+//$_SESSION['cus_id'] = $cus_id;
+//$_SESSION['sessid'] = session_id();
+//$sessid = session_id();
 
-$log = findLog($cus_id, $ip, $sessid, $db);
+
+//$log = findLog($cus_id, $ip, $sessid, $db);
 
 //查找日志是否存在
-if (empty($log)) {
+/*if (empty($log)) {
     //如果不存在添加    
     $dataLog = array(
         'cus_id' => $cus_id,
@@ -54,7 +56,7 @@ if (empty($log)) {
         'sessid' => $sessid
     );
     $updateLog = updateLog($cus_id, $dataLog, $db);
-}
+}*/
 //查看是否存在统计记录
 $counter = findCount($cus_id, $db);
 if (empty($counter)) {
@@ -64,10 +66,13 @@ if (empty($counter)) {
         'record_date' => $date
     );
     $insertCount = insertCount($dataCount, $db);
+	echo "<br>insert";
 }
-if (isset($insertLog)) {
+$updateCount = updateCount($cus_id, $platform, $counter, $db);
+/*if (isset($insertLog)) {
     $updateCount = updateCount($cus_id, $platform, $counter, $db);
-} 
+	echo "<br>update";
+} */
 
 /**
  * 查找日志
@@ -76,7 +81,10 @@ if (isset($insertLog)) {
  * @return type
  */
 function findLog($cus_id, $ip, $sessid, $db) {
+	$time1 = time();
     $res = $db->query("select * from up_statis_log where cus_id=$cus_id and ip='$ip' and sessid='$sessid' limit 1", PDO::FETCH_ASSOC);
+	$time2 = time();
+	echo 'find:'.($time2 - $time1);
     foreach ($res as $v) {
         $row = $v;
     }
@@ -94,7 +102,10 @@ function findLog($cus_id, $ip, $sessid, $db) {
  * @return type
  */
 function insertLog($data, $db) {
+	$time1 = time();
     $res = $db->query("insert into up_statis_log (cus_id, ip, sessid, expires, platform) value ('$data[cus_id]', '$data[ip]', '$data[sessid]', '$data[expires]', '$data[platform]')");
+	$time2 = time();
+	echo 'insert:'.($time2 - $time1);
     return $res;
 }
 
@@ -105,7 +116,10 @@ function insertLog($data, $db) {
  * @return type
  */
 function updateLog($cus_id, $data, $db) {
+	$time1 = time();
     $res = $db->query("update up_statis_log set ip='$data[ip]', sessid='$data[sessid]', expires='$data[expires]' where cus_id=" . $cus_id);
+	$time2 = time();
+	echo 'update:'.($time2 - $time1);
     return $res;
 }
 
