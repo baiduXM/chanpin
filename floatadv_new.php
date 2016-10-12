@@ -19,9 +19,9 @@
 				}
 				$div.=':' . $v->posy . 'px;">';
 				$div.='<a class="popClose" title="关闭" >关闭</a>';
-			  if (!isset($v->type)||$v->type == "adv") {
+				if (!isset($v->type)||$v->type == "adv") {
 					$div.='<a href="' . $v->href . '" target="_blank"><img class="float_adv" src="' . $v->url . '"></a>';
-				} elseif ($v->type == "form") {
+				} else {
 					$div .= $v->content;
 					$js .= $v->cssjs;
 				}
