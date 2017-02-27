@@ -17,7 +17,7 @@ foreach ($data as $k => &$v) {
 }
 $condata = serialize($condata);
 if ($action_type == 0) {
-    $text = $action_text;
+    $text = $action_text ? $action_text : '提交成功';
     $url = $_SERVER["HTTP_REFERER"];
 }
 if ($action_type == 1) {
