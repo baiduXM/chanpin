@@ -3,7 +3,7 @@ error_reporting(0);
 header('Content-type: text/html; charset=utf-8');
 include("conn.php");
 $data = $_POST;
-
+dd($data);
 $form_id = $data[form_id];
 $action_type = $data[action_type];
 $action_text = $data[action_text];
