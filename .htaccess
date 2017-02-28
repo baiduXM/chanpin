@@ -7,5 +7,6 @@ RewriteRule ^search/([0-9]+)/([a-zA-Z]{1,}).html?$ /search.php?id=$1&type=$2&%{Q
 RewriteRule ^Viewcount/([0-9]+)/([a-zA-Z]{1,}).html?$ /GetCent.php?id=$1&type=$2&%{QUERY_STRING} [L]
 RewriteRule ^message/([0-9]+)?$ /admin/add.php?id=$1&%{QUERY_STRING} [L]
 RewriteRule ^userdata/([0-9]+)?$ /admin/form_userdata_submit.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^formdata/([0-9]+)?$ /admin/form_userdata_submit_dev.php?id=$1&%{QUERY_STRING} [L]
 
 </IfModule>
