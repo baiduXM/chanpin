@@ -3,7 +3,6 @@ error_reporting(0);
 header('Content-type: text/html; charset=utf-8');
 include("conn.php");
 $data = $_POST;
-
 $form_id = $data[form_id];
 $action_type = $data[action_type];
 $action_text = $data[action_text];
@@ -18,7 +17,7 @@ foreach ($data as $k => &$v) {
 }
 $condata = serialize($condata);
 if ($action_type == 0) {
-    $text = $action_text;
+    $text = $action_text ? $action_text : '提交成功';
     $url = $_SERVER["HTTP_REFERER"];
 }
 if ($action_type == 1) {
